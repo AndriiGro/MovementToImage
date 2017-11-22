@@ -32,19 +32,19 @@ namespace MovementToImage
             PlotModel plotModelY = GeneratePlotModelForTwoArrays(movement1.doubleDataY, movement2.doubleDataY);
             PlotModel plotModelZ = GeneratePlotModelForTwoArrays(movement1.doubleDataZ, movement2.doubleDataZ);
 
-            form1.setPlotCorrX(plotModelX);
-            form1.setPlotCorrY(plotModelY);
-            form1.setPlotCorrZ(plotModelZ);
+            form1.SetPlotCorrX(plotModelX);
+            form1.SetPlotCorrY(plotModelY);
+            form1.SetPlotCorrZ(plotModelZ);
 
             double correlationX = GetCorrelationForTwoArrays(movement1.doubleDataX, movement2.doubleDataX);
             double correlationY = GetCorrelationForTwoArrays(movement1.doubleDataY, movement2.doubleDataY);
             double correlationZ = GetCorrelationForTwoArrays(movement1.doubleDataZ, movement2.doubleDataZ);
             double correlationAverage = (correlationX + correlationY + correlationZ) / 3.0;
 
-            form1.setCorrelationResultX(correlationX.ToString("0.####"));
-            form1.setCorrelationResultY(correlationY.ToString("0.####"));
-            form1.setCorrelationResultZ(correlationZ.ToString("0.####"));
-            form1.setCorrelationResultAverage(correlationAverage.ToString("0.####"));
+            form1.SetCorrelationResultX(correlationX.ToString("0.####"));
+            form1.SetCorrelationResultY(correlationY.ToString("0.####"));
+            form1.SetCorrelationResultZ(correlationZ.ToString("0.####"));
+            form1.SetCorrelationResultAverage(correlationAverage.ToString("0.####"));
         }
 
         private double GetCorrelationForTwoArrays(List<double> array1, List<double> array2)

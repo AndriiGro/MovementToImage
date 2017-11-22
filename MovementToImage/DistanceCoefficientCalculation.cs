@@ -18,7 +18,7 @@ namespace MovementToImage
         Form1 mainForm;
         Color plotBackgroundColor = Color.White;
         Color plotColor = Color.Red;
-        Color differenceFillingColor = Color.Gold;
+        Color differenceFillingColor = Color.Red;
         CorrelationCalculation helper;
 
         public DistanceCoefficientCalculation(Form1 formInstance)
@@ -33,8 +33,8 @@ namespace MovementToImage
             MovementData movement2 = helper.ConvertInputDataToMovementData(movementData2);
 
             MovementForDistanceCoeffitient movementX = new MovementForDistanceCoeffitient(movement1.doubleDataX, movement2.doubleDataX);
-            MovementForDistanceCoeffitient movementY = new MovementForDistanceCoeffitient(movement1.doubleDataY, movement2.doubleDataZ);
-            MovementForDistanceCoeffitient movementZ = new MovementForDistanceCoeffitient(movement1.doubleDataY, movement2.doubleDataZ);
+            MovementForDistanceCoeffitient movementY = new MovementForDistanceCoeffitient(movement1.doubleDataY, movement2.doubleDataY);
+            MovementForDistanceCoeffitient movementZ = new MovementForDistanceCoeffitient(movement1.doubleDataZ, movement2.doubleDataZ);
 
             List<DataForCountingDifference> differencesX = GetDifferences(movementX);
             List<DataForCountingDifference> differencesY = GetDifferences(movementY);
@@ -45,18 +45,18 @@ namespace MovementToImage
             double distanceCoefZ = CalculateDistanceCoefficient(differencesZ);
             double distanceCoefAverage = (distanceCoefX + distanceCoefY + distanceCoefZ) / 3.0;
 
-            mainForm.setTab3DistanceCoefficientX(distanceCoefX.ToString("0.####"));
-            mainForm.setTab3DistanceCoefficientY(distanceCoefY.ToString("0.####"));
-            mainForm.setTab3DistanceCoefficientZ(distanceCoefZ.ToString("0.####"));
-            mainForm.setTab3DistanceCoefficientAverage(distanceCoefAverage.ToString("0.####"));
+            mainForm.SetTab3DistanceCoefficientX(distanceCoefX.ToString("0.####"));
+            mainForm.SetTab3DistanceCoefficientY(distanceCoefY.ToString("0.####"));
+            mainForm.SetTab3DistanceCoefficientZ(distanceCoefZ.ToString("0.####"));
+            mainForm.SetTab3DistanceCoefficientAverage(distanceCoefAverage.ToString("0.####"));
 
             Bitmap visualizationX = GenerateDifferencesVisualizationImage(differencesX);
             Bitmap visualizationY = GenerateDifferencesVisualizationImage(differencesY);
             Bitmap visualizationZ = GenerateDifferencesVisualizationImage(differencesZ);
             
-            mainForm.setTab3PictureX(visualizationX);
-            mainForm.setTab3PictureY(visualizationY);
-            mainForm.setTab3PictureZ(visualizationZ);            
+            mainForm.SetTab3PictureX(visualizationX);
+            mainForm.SetTab3PictureY(visualizationY);
+            mainForm.SetTab3PictureZ(visualizationZ);            
         }
 
         private Bitmap GenerateDifferencesVisualizationImage(List<DataForCountingDifference> differences)
@@ -101,7 +101,7 @@ namespace MovementToImage
 
             double maxSum = differences.Count * Math.Abs(differences[0].MinValue - differences[0].MaxValue);
 
-            return differencesSum / maxSum;
+            return 1 - (differencesSum / maxSum);
         }
 
         private List<DataForCountingDifference> GetDifferences(MovementForDistanceCoeffitient movement)
@@ -112,8 +112,8 @@ namespace MovementToImage
                 DataForCountingDifference data = new DataForCountingDifference();
                 data.MinValue = movement.Bounds.Lower;
                 data.MaxValue = movement.Bounds.Upper;
-                data.Difference = Math.Abs(movement.Movement1Data[i] - movement.Movement2Data[2]);
-                data.StartValue = Math.Min(movement.Movement1Data[i], movement.Movement2Data[2]);
+                data.Difference = Math.Abs(movement.Movement1Data[i] - movement.Movement2Data[i]);
+                data.StartValue = Math.Min(movement.Movement1Data[i], movement.Movement2Data[i]);
                 differences.Add(data);
             }
 

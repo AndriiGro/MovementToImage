@@ -282,6 +282,9 @@ namespace MovementToImage
         {
             try
             {
+                tab3_Movement1.Text = txt_Movement1.Text;
+                tab3_Movement2.Text = txt_Movement2.Text;
+
                 var correlationDataManager = new CorrelationCalculation(this);
                 correlationDataManager.ProcessData(txt_Movement1.Text, txt_Movement2.Text);
             }
@@ -292,22 +295,22 @@ namespace MovementToImage
         }
 
         //Tab Correlation calculation
-        public void setPlotCorrX(PlotModel model) { plotCorrX.Model = model; }
-        public void setPlotCorrY(PlotModel model) { plotCorrY.Model = model; }
-        public void setPlotCorrZ(PlotModel model) { plotCorrZ.Model = model; }
-        public void setCorrelationResultX(string result) { txt_corrResultX.Text = result; }
-        public void setCorrelationResultY(string result) { txt_corrResultY.Text = result; }
-        public void setCorrelationResultZ(string result) { txt_corrResultZ.Text = result; }
-        public void setCorrelationResultAverage(string result) { txt_CorrResult.Text = result; }
+        public void SetPlotCorrX(PlotModel model) { plotCorrX.Model = model; }
+        public void SetPlotCorrY(PlotModel model) { plotCorrY.Model = model; }
+        public void SetPlotCorrZ(PlotModel model) { plotCorrZ.Model = model; }
+        public void SetCorrelationResultX(string result) { txt_corrResultX.Text = result; }
+        public void SetCorrelationResultY(string result) { txt_corrResultY.Text = result; }
+        public void SetCorrelationResultZ(string result) { txt_corrResultZ.Text = result; }
+        public void SetCorrelationResultAverage(string result) { txt_CorrResult.Text = result; }
 
         //Tab Distance coefficient
-        public void setTab3PictureX(Image image) { tab3_pictureX.Image = image; }
-        public void setTab3PictureY(Image image) { tab3_pictureY.Image = image; }
-        public void setTab3PictureZ(Image image) { tab3_pictureZ.Image = image; }
-        public void setTab3DistanceCoefficientX(string result) { tab3_coefX.Text = result; }
-        public void setTab3DistanceCoefficientY(string result) { tab3_coefY.Text = result; }
-        public void setTab3DistanceCoefficientZ(string result) { tab3_coefZ.Text = result; }
-        public void setTab3DistanceCoefficientAverage(string result) { tab3_coefAverage.Text = result; }
+        public void SetTab3PictureX(Image image) { tab3_pictureX.Image = image; }
+        public void SetTab3PictureY(Image image) { tab3_pictureY.Image = image; }
+        public void SetTab3PictureZ(Image image) { tab3_pictureZ.Image = image; }
+        public void SetTab3DistanceCoefficientX(string result) { tab3_coefX.Text = result; }
+        public void SetTab3DistanceCoefficientY(string result) { tab3_coefY.Text = result; }
+        public void SetTab3DistanceCoefficientZ(string result) { tab3_coefZ.Text = result; }
+        public void SetTab3DistanceCoefficientAverage(string result) { tab3_coefAverage.Text = result; }
 
         private void btn_clearCorrelationData_Click(object sender, EventArgs e)
         {

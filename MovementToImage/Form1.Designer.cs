@@ -46,27 +46,6 @@
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
-            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.txt_corrResultZ = new MetroFramework.Controls.MetroTextBox();
-            this.txt_corrResultY = new MetroFramework.Controls.MetroTextBox();
-            this.txt_corrResultX = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
-            this.plotCorrZ = new OxyPlot.WindowsForms.PlotView();
-            this.plotCorrY = new OxyPlot.WindowsForms.PlotView();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
-            this.btn_clearCorrelationData = new MetroFramework.Controls.MetroButton();
-            this.txt_CorrResult = new MetroFramework.Controls.MetroTextBox();
-            this.btn_calculateCorrelation = new MetroFramework.Controls.MetroButton();
-            this.plotCorrX = new OxyPlot.WindowsForms.PlotView();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.txt_Movement2 = new MetroFramework.Controls.MetroTextBox();
-            this.txt_Movement1 = new MetroFramework.Controls.MetroTextBox();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.tab3_pictureZ = new System.Windows.Forms.PictureBox();
             this.tab3_pictureX = new System.Windows.Forms.PictureBox();
@@ -88,15 +67,44 @@
             this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
             this.tab3_Movement2 = new MetroFramework.Controls.MetroTextBox();
             this.tab3_Movement1 = new MetroFramework.Controls.MetroTextBox();
+            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.txt_corrResultZ = new MetroFramework.Controls.MetroTextBox();
+            this.txt_corrResultY = new MetroFramework.Controls.MetroTextBox();
+            this.txt_corrResultX = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
+            this.plotCorrZ = new OxyPlot.WindowsForms.PlotView();
+            this.plotCorrY = new OxyPlot.WindowsForms.PlotView();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.btn_clearCorrelationData = new MetroFramework.Controls.MetroButton();
+            this.txt_CorrResult = new MetroFramework.Controls.MetroTextBox();
+            this.btn_calculateCorrelation = new MetroFramework.Controls.MetroButton();
+            this.plotCorrX = new OxyPlot.WindowsForms.PlotView();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.txt_Movement2 = new MetroFramework.Controls.MetroTextBox();
+            this.txt_Movement1 = new MetroFramework.Controls.MetroTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
+            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel26 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel27 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel28 = new MetroFramework.Controls.MetroLabel();
+            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
+            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
+            this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.resultPictureBox)).BeginInit();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
-            this.metroTabPage2.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureZ)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureY)).BeginInit();
+            this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -234,11 +242,11 @@
             // metroTabControl1
             // 
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
-            this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
+            this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.Location = new System.Drawing.Point(4, 113);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 2;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(944, 539);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Red;
             this.metroTabControl1.TabIndex = 15;
@@ -280,219 +288,6 @@
             this.metroLabel15.Size = new System.Drawing.Size(47, 19);
             this.metroLabel15.TabIndex = 15;
             this.metroLabel15.Text = "wykres";
-            // 
-            // metroTabPage2
-            // 
-            this.metroTabPage2.Controls.Add(this.txt_corrResultZ);
-            this.metroTabPage2.Controls.Add(this.txt_corrResultY);
-            this.metroTabPage2.Controls.Add(this.txt_corrResultX);
-            this.metroTabPage2.Controls.Add(this.metroLabel14);
-            this.metroTabPage2.Controls.Add(this.metroLabel13);
-            this.metroTabPage2.Controls.Add(this.metroLabel12);
-            this.metroTabPage2.Controls.Add(this.metroLabel11);
-            this.metroTabPage2.Controls.Add(this.metroLabel10);
-            this.metroTabPage2.Controls.Add(this.metroLabel9);
-            this.metroTabPage2.Controls.Add(this.plotCorrZ);
-            this.metroTabPage2.Controls.Add(this.plotCorrY);
-            this.metroTabPage2.Controls.Add(this.metroLabel8);
-            this.metroTabPage2.Controls.Add(this.btn_clearCorrelationData);
-            this.metroTabPage2.Controls.Add(this.txt_CorrResult);
-            this.metroTabPage2.Controls.Add(this.btn_calculateCorrelation);
-            this.metroTabPage2.Controls.Add(this.plotCorrX);
-            this.metroTabPage2.Controls.Add(this.metroLabel7);
-            this.metroTabPage2.Controls.Add(this.metroLabel6);
-            this.metroTabPage2.Controls.Add(this.txt_Movement2);
-            this.metroTabPage2.Controls.Add(this.txt_Movement1);
-            this.metroTabPage2.HorizontalScrollbarBarColor = true;
-            this.metroTabPage2.Location = new System.Drawing.Point(4, 35);
-            this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(936, 500);
-            this.metroTabPage2.TabIndex = 1;
-            this.metroTabPage2.Text = "Korelacja";
-            this.metroTabPage2.VerticalScrollbarBarColor = true;
-            // 
-            // txt_corrResultZ
-            // 
-            this.txt_corrResultZ.Location = new System.Drawing.Point(739, 360);
-            this.txt_corrResultZ.Name = "txt_corrResultZ";
-            this.txt_corrResultZ.ReadOnly = true;
-            this.txt_corrResultZ.Size = new System.Drawing.Size(125, 23);
-            this.txt_corrResultZ.TabIndex = 21;
-            // 
-            // txt_corrResultY
-            // 
-            this.txt_corrResultY.Location = new System.Drawing.Point(739, 191);
-            this.txt_corrResultY.Name = "txt_corrResultY";
-            this.txt_corrResultY.ReadOnly = true;
-            this.txt_corrResultY.Size = new System.Drawing.Size(125, 23);
-            this.txt_corrResultY.TabIndex = 20;
-            // 
-            // txt_corrResultX
-            // 
-            this.txt_corrResultX.Location = new System.Drawing.Point(739, 44);
-            this.txt_corrResultX.Name = "txt_corrResultX";
-            this.txt_corrResultX.ReadOnly = true;
-            this.txt_corrResultX.Size = new System.Drawing.Size(125, 23);
-            this.txt_corrResultX.TabIndex = 19;
-            // 
-            // metroLabel14
-            // 
-            this.metroLabel14.AutoSize = true;
-            this.metroLabel14.Location = new System.Drawing.Point(739, 337);
-            this.metroLabel14.Name = "metroLabel14";
-            this.metroLabel14.Size = new System.Drawing.Size(81, 19);
-            this.metroLabel14.TabIndex = 18;
-            this.metroLabel14.Text = "Korelacja Z: ";
-            // 
-            // metroLabel13
-            // 
-            this.metroLabel13.AutoSize = true;
-            this.metroLabel13.Location = new System.Drawing.Point(739, 168);
-            this.metroLabel13.Name = "metroLabel13";
-            this.metroLabel13.Size = new System.Drawing.Size(81, 19);
-            this.metroLabel13.TabIndex = 17;
-            this.metroLabel13.Text = "Korelacja Y: ";
-            // 
-            // metroLabel12
-            // 
-            this.metroLabel12.AutoSize = true;
-            this.metroLabel12.Location = new System.Drawing.Point(739, 21);
-            this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(81, 19);
-            this.metroLabel12.TabIndex = 16;
-            this.metroLabel12.Text = "Korelacja X: ";
-            // 
-            // metroLabel11
-            // 
-            this.metroLabel11.AutoSize = true;
-            this.metroLabel11.Location = new System.Drawing.Point(467, 337);
-            this.metroLabel11.Name = "metroLabel11";
-            this.metroLabel11.Size = new System.Drawing.Size(17, 19);
-            this.metroLabel11.TabIndex = 15;
-            this.metroLabel11.Text = "Z";
-            // 
-            // metroLabel10
-            // 
-            this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(467, 168);
-            this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(17, 19);
-            this.metroLabel10.TabIndex = 14;
-            this.metroLabel10.Text = "Y";
-            // 
-            // metroLabel9
-            // 
-            this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(467, 21);
-            this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(17, 19);
-            this.metroLabel9.TabIndex = 13;
-            this.metroLabel9.Text = "X";
-            // 
-            // plotCorrZ
-            // 
-            this.plotCorrZ.Location = new System.Drawing.Point(490, 337);
-            this.plotCorrZ.Name = "plotCorrZ";
-            this.plotCorrZ.PanCursor = System.Windows.Forms.Cursors.Hand;
-            this.plotCorrZ.Size = new System.Drawing.Size(239, 132);
-            this.plotCorrZ.TabIndex = 12;
-            this.plotCorrZ.Text = "plotView2";
-            this.plotCorrZ.ZoomHorizontalCursor = System.Windows.Forms.Cursors.SizeWE;
-            this.plotCorrZ.ZoomRectangleCursor = System.Windows.Forms.Cursors.SizeNWSE;
-            this.plotCorrZ.ZoomVerticalCursor = System.Windows.Forms.Cursors.SizeNS;
-            // 
-            // plotCorrY
-            // 
-            this.plotCorrY.Location = new System.Drawing.Point(490, 168);
-            this.plotCorrY.Name = "plotCorrY";
-            this.plotCorrY.PanCursor = System.Windows.Forms.Cursors.Hand;
-            this.plotCorrY.Size = new System.Drawing.Size(239, 163);
-            this.plotCorrY.TabIndex = 11;
-            this.plotCorrY.Text = "plotView1";
-            this.plotCorrY.ZoomHorizontalCursor = System.Windows.Forms.Cursors.SizeWE;
-            this.plotCorrY.ZoomRectangleCursor = System.Windows.Forms.Cursors.SizeNWSE;
-            this.plotCorrY.ZoomVerticalCursor = System.Windows.Forms.Cursors.SizeNS;
-            // 
-            // metroLabel8
-            // 
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(627, 475);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(79, 19);
-            this.metroLabel8.TabIndex = 8;
-            this.metroLabel8.Text = "Korelacja = ";
-            // 
-            // btn_clearCorrelationData
-            // 
-            this.btn_clearCorrelationData.Location = new System.Drawing.Point(837, 475);
-            this.btn_clearCorrelationData.Name = "btn_clearCorrelationData";
-            this.btn_clearCorrelationData.Size = new System.Drawing.Size(96, 23);
-            this.btn_clearCorrelationData.TabIndex = 10;
-            this.btn_clearCorrelationData.Text = "Wyczyść dane";
-            this.btn_clearCorrelationData.Click += new System.EventHandler(this.btn_clearCorrelationData_Click);
-            // 
-            // txt_CorrResult
-            // 
-            this.txt_CorrResult.Location = new System.Drawing.Point(701, 475);
-            this.txt_CorrResult.Name = "txt_CorrResult";
-            this.txt_CorrResult.ReadOnly = true;
-            this.txt_CorrResult.Size = new System.Drawing.Size(108, 23);
-            this.txt_CorrResult.TabIndex = 9;
-            // 
-            // btn_calculateCorrelation
-            // 
-            this.btn_calculateCorrelation.Location = new System.Drawing.Point(490, 475);
-            this.btn_calculateCorrelation.Name = "btn_calculateCorrelation";
-            this.btn_calculateCorrelation.Size = new System.Drawing.Size(120, 19);
-            this.btn_calculateCorrelation.TabIndex = 7;
-            this.btn_calculateCorrelation.Text = "Oblicz korelację";
-            this.btn_calculateCorrelation.Click += new System.EventHandler(this.btn_calculateCorrelation_Click);
-            // 
-            // plotCorrX
-            // 
-            this.plotCorrX.Location = new System.Drawing.Point(490, 21);
-            this.plotCorrX.Name = "plotCorrX";
-            this.plotCorrX.PanCursor = System.Windows.Forms.Cursors.Hand;
-            this.plotCorrX.Size = new System.Drawing.Size(239, 141);
-            this.plotCorrX.TabIndex = 6;
-            this.plotCorrX.Text = "plotViewCorrelation";
-            this.plotCorrX.ZoomHorizontalCursor = System.Windows.Forms.Cursors.SizeWE;
-            this.plotCorrX.ZoomRectangleCursor = System.Windows.Forms.Cursors.SizeNWSE;
-            this.plotCorrX.ZoomVerticalCursor = System.Windows.Forms.Cursors.SizeNS;
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(3, 266);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(89, 19);
-            this.metroLabel7.TabIndex = 5;
-            this.metroLabel7.Text = "Dane Ruchu 2";
-            // 
-            // metroLabel6
-            // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(3, 21);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(87, 19);
-            this.metroLabel6.TabIndex = 4;
-            this.metroLabel6.Text = "Dane Ruchu 1";
-            // 
-            // txt_Movement2
-            // 
-            this.txt_Movement2.Location = new System.Drawing.Point(130, 266);
-            this.txt_Movement2.Multiline = true;
-            this.txt_Movement2.Name = "txt_Movement2";
-            this.txt_Movement2.Size = new System.Drawing.Size(329, 228);
-            this.txt_Movement2.TabIndex = 3;
-            // 
-            // txt_Movement1
-            // 
-            this.txt_Movement1.Location = new System.Drawing.Point(130, 21);
-            this.txt_Movement1.Multiline = true;
-            this.txt_Movement1.Name = "txt_Movement1";
-            this.txt_Movement1.Size = new System.Drawing.Size(329, 239);
-            this.txt_Movement1.TabIndex = 2;
             // 
             // metroTabPage3
             // 
@@ -701,6 +496,228 @@
             this.tab3_Movement1.Size = new System.Drawing.Size(329, 239);
             this.tab3_Movement1.TabIndex = 2;
             // 
+            // metroTabPage2
+            // 
+            this.metroTabPage2.Controls.Add(this.metroTextBox4);
+            this.metroTabPage2.Controls.Add(this.metroTextBox3);
+            this.metroTabPage2.Controls.Add(this.metroTextBox2);
+            this.metroTabPage2.Controls.Add(this.metroLabel28);
+            this.metroTabPage2.Controls.Add(this.metroLabel27);
+            this.metroTabPage2.Controls.Add(this.metroLabel26);
+            this.metroTabPage2.Controls.Add(this.metroTextBox1);
+            this.metroTabPage2.Controls.Add(this.metroLabel18);
+            this.metroTabPage2.Controls.Add(this.txt_corrResultZ);
+            this.metroTabPage2.Controls.Add(this.txt_corrResultY);
+            this.metroTabPage2.Controls.Add(this.txt_corrResultX);
+            this.metroTabPage2.Controls.Add(this.metroLabel14);
+            this.metroTabPage2.Controls.Add(this.metroLabel13);
+            this.metroTabPage2.Controls.Add(this.metroLabel12);
+            this.metroTabPage2.Controls.Add(this.metroLabel11);
+            this.metroTabPage2.Controls.Add(this.metroLabel10);
+            this.metroTabPage2.Controls.Add(this.metroLabel9);
+            this.metroTabPage2.Controls.Add(this.plotCorrZ);
+            this.metroTabPage2.Controls.Add(this.plotCorrY);
+            this.metroTabPage2.Controls.Add(this.metroLabel8);
+            this.metroTabPage2.Controls.Add(this.btn_clearCorrelationData);
+            this.metroTabPage2.Controls.Add(this.txt_CorrResult);
+            this.metroTabPage2.Controls.Add(this.btn_calculateCorrelation);
+            this.metroTabPage2.Controls.Add(this.plotCorrX);
+            this.metroTabPage2.Controls.Add(this.metroLabel7);
+            this.metroTabPage2.Controls.Add(this.metroLabel6);
+            this.metroTabPage2.Controls.Add(this.txt_Movement2);
+            this.metroTabPage2.Controls.Add(this.txt_Movement1);
+            this.metroTabPage2.HorizontalScrollbarBarColor = true;
+            this.metroTabPage2.Location = new System.Drawing.Point(4, 35);
+            this.metroTabPage2.Name = "metroTabPage2";
+            this.metroTabPage2.Size = new System.Drawing.Size(936, 500);
+            this.metroTabPage2.TabIndex = 1;
+            this.metroTabPage2.Text = "Korelacja i Róźnica energii";
+            this.metroTabPage2.VerticalScrollbarBarColor = true;
+            // 
+            // txt_corrResultZ
+            // 
+            this.txt_corrResultZ.Location = new System.Drawing.Point(705, 360);
+            this.txt_corrResultZ.Name = "txt_corrResultZ";
+            this.txt_corrResultZ.ReadOnly = true;
+            this.txt_corrResultZ.Size = new System.Drawing.Size(125, 23);
+            this.txt_corrResultZ.TabIndex = 21;
+            // 
+            // txt_corrResultY
+            // 
+            this.txt_corrResultY.Location = new System.Drawing.Point(705, 191);
+            this.txt_corrResultY.Name = "txt_corrResultY";
+            this.txt_corrResultY.ReadOnly = true;
+            this.txt_corrResultY.Size = new System.Drawing.Size(125, 23);
+            this.txt_corrResultY.TabIndex = 20;
+            // 
+            // txt_corrResultX
+            // 
+            this.txt_corrResultX.Location = new System.Drawing.Point(705, 44);
+            this.txt_corrResultX.Name = "txt_corrResultX";
+            this.txt_corrResultX.ReadOnly = true;
+            this.txt_corrResultX.Size = new System.Drawing.Size(125, 23);
+            this.txt_corrResultX.TabIndex = 19;
+            // 
+            // metroLabel14
+            // 
+            this.metroLabel14.AutoSize = true;
+            this.metroLabel14.Location = new System.Drawing.Point(705, 337);
+            this.metroLabel14.Name = "metroLabel14";
+            this.metroLabel14.Size = new System.Drawing.Size(81, 19);
+            this.metroLabel14.TabIndex = 18;
+            this.metroLabel14.Text = "Korelacja Z: ";
+            // 
+            // metroLabel13
+            // 
+            this.metroLabel13.AutoSize = true;
+            this.metroLabel13.Location = new System.Drawing.Point(705, 168);
+            this.metroLabel13.Name = "metroLabel13";
+            this.metroLabel13.Size = new System.Drawing.Size(81, 19);
+            this.metroLabel13.TabIndex = 17;
+            this.metroLabel13.Text = "Korelacja Y: ";
+            // 
+            // metroLabel12
+            // 
+            this.metroLabel12.AutoSize = true;
+            this.metroLabel12.Location = new System.Drawing.Point(705, 21);
+            this.metroLabel12.Name = "metroLabel12";
+            this.metroLabel12.Size = new System.Drawing.Size(81, 19);
+            this.metroLabel12.TabIndex = 16;
+            this.metroLabel12.Text = "Korelacja X: ";
+            // 
+            // metroLabel11
+            // 
+            this.metroLabel11.AutoSize = true;
+            this.metroLabel11.Location = new System.Drawing.Point(433, 337);
+            this.metroLabel11.Name = "metroLabel11";
+            this.metroLabel11.Size = new System.Drawing.Size(17, 19);
+            this.metroLabel11.TabIndex = 15;
+            this.metroLabel11.Text = "Z";
+            // 
+            // metroLabel10
+            // 
+            this.metroLabel10.AutoSize = true;
+            this.metroLabel10.Location = new System.Drawing.Point(433, 168);
+            this.metroLabel10.Name = "metroLabel10";
+            this.metroLabel10.Size = new System.Drawing.Size(17, 19);
+            this.metroLabel10.TabIndex = 14;
+            this.metroLabel10.Text = "Y";
+            // 
+            // metroLabel9
+            // 
+            this.metroLabel9.AutoSize = true;
+            this.metroLabel9.Location = new System.Drawing.Point(433, 21);
+            this.metroLabel9.Name = "metroLabel9";
+            this.metroLabel9.Size = new System.Drawing.Size(17, 19);
+            this.metroLabel9.TabIndex = 13;
+            this.metroLabel9.Text = "X";
+            // 
+            // plotCorrZ
+            // 
+            this.plotCorrZ.Location = new System.Drawing.Point(456, 337);
+            this.plotCorrZ.Name = "plotCorrZ";
+            this.plotCorrZ.PanCursor = System.Windows.Forms.Cursors.Hand;
+            this.plotCorrZ.Size = new System.Drawing.Size(239, 132);
+            this.plotCorrZ.TabIndex = 12;
+            this.plotCorrZ.Text = "plotView2";
+            this.plotCorrZ.ZoomHorizontalCursor = System.Windows.Forms.Cursors.SizeWE;
+            this.plotCorrZ.ZoomRectangleCursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.plotCorrZ.ZoomVerticalCursor = System.Windows.Forms.Cursors.SizeNS;
+            // 
+            // plotCorrY
+            // 
+            this.plotCorrY.Location = new System.Drawing.Point(456, 168);
+            this.plotCorrY.Name = "plotCorrY";
+            this.plotCorrY.PanCursor = System.Windows.Forms.Cursors.Hand;
+            this.plotCorrY.Size = new System.Drawing.Size(239, 163);
+            this.plotCorrY.TabIndex = 11;
+            this.plotCorrY.Text = "plotView1";
+            this.plotCorrY.ZoomHorizontalCursor = System.Windows.Forms.Cursors.SizeWE;
+            this.plotCorrY.ZoomRectangleCursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.plotCorrY.ZoomVerticalCursor = System.Windows.Forms.Cursors.SizeNS;
+            // 
+            // metroLabel8
+            // 
+            this.metroLabel8.AutoSize = true;
+            this.metroLabel8.Location = new System.Drawing.Point(523, 481);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(79, 19);
+            this.metroLabel8.TabIndex = 8;
+            this.metroLabel8.Text = "Korelacja = ";
+            // 
+            // btn_clearCorrelationData
+            // 
+            this.btn_clearCorrelationData.Location = new System.Drawing.Point(-4, 481);
+            this.btn_clearCorrelationData.Name = "btn_clearCorrelationData";
+            this.btn_clearCorrelationData.Size = new System.Drawing.Size(96, 23);
+            this.btn_clearCorrelationData.TabIndex = 10;
+            this.btn_clearCorrelationData.Text = "Wyczyść dane";
+            this.btn_clearCorrelationData.Visible = false;
+            this.btn_clearCorrelationData.Click += new System.EventHandler(this.btn_clearCorrelationData_Click);
+            // 
+            // txt_CorrResult
+            // 
+            this.txt_CorrResult.Location = new System.Drawing.Point(608, 477);
+            this.txt_CorrResult.Name = "txt_CorrResult";
+            this.txt_CorrResult.ReadOnly = true;
+            this.txt_CorrResult.Size = new System.Drawing.Size(87, 23);
+            this.txt_CorrResult.TabIndex = 9;
+            // 
+            // btn_calculateCorrelation
+            // 
+            this.btn_calculateCorrelation.Location = new System.Drawing.Point(456, 475);
+            this.btn_calculateCorrelation.Name = "btn_calculateCorrelation";
+            this.btn_calculateCorrelation.Size = new System.Drawing.Size(61, 25);
+            this.btn_calculateCorrelation.TabIndex = 7;
+            this.btn_calculateCorrelation.Text = "Oblicz";
+            this.btn_calculateCorrelation.Click += new System.EventHandler(this.btn_calculateCorrelation_Click);
+            // 
+            // plotCorrX
+            // 
+            this.plotCorrX.Location = new System.Drawing.Point(456, 21);
+            this.plotCorrX.Name = "plotCorrX";
+            this.plotCorrX.PanCursor = System.Windows.Forms.Cursors.Hand;
+            this.plotCorrX.Size = new System.Drawing.Size(239, 141);
+            this.plotCorrX.TabIndex = 6;
+            this.plotCorrX.Text = "plotViewCorrelation";
+            this.plotCorrX.ZoomHorizontalCursor = System.Windows.Forms.Cursors.SizeWE;
+            this.plotCorrX.ZoomRectangleCursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.plotCorrX.ZoomVerticalCursor = System.Windows.Forms.Cursors.SizeNS;
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.Location = new System.Drawing.Point(3, 266);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(89, 19);
+            this.metroLabel7.TabIndex = 5;
+            this.metroLabel7.Text = "Dane Ruchu 2";
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(3, 21);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(87, 19);
+            this.metroLabel6.TabIndex = 4;
+            this.metroLabel6.Text = "Dane Ruchu 1";
+            // 
+            // txt_Movement2
+            // 
+            this.txt_Movement2.Location = new System.Drawing.Point(96, 265);
+            this.txt_Movement2.Multiline = true;
+            this.txt_Movement2.Name = "txt_Movement2";
+            this.txt_Movement2.Size = new System.Drawing.Size(329, 235);
+            this.txt_Movement2.TabIndex = 3;
+            // 
+            // txt_Movement1
+            // 
+            this.txt_Movement1.Location = new System.Drawing.Point(96, 21);
+            this.txt_Movement1.Multiline = true;
+            this.txt_Movement1.Name = "txt_Movement1";
+            this.txt_Movement1.Size = new System.Drawing.Size(329, 239);
+            this.txt_Movement1.TabIndex = 2;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -710,6 +727,71 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
+            // 
+            // metroLabel18
+            // 
+            this.metroLabel18.AutoSize = true;
+            this.metroLabel18.Location = new System.Drawing.Point(701, 481);
+            this.metroLabel18.Name = "metroLabel18";
+            this.metroLabel18.Size = new System.Drawing.Size(127, 19);
+            this.metroLabel18.TabIndex = 22;
+            this.metroLabel18.Text = "Koeficjent róźnicy = ";
+            // 
+            // metroTextBox1
+            // 
+            this.metroTextBox1.Location = new System.Drawing.Point(834, 477);
+            this.metroTextBox1.Name = "metroTextBox1";
+            this.metroTextBox1.ReadOnly = true;
+            this.metroTextBox1.Size = new System.Drawing.Size(97, 23);
+            this.metroTextBox1.TabIndex = 23;
+            // 
+            // metroLabel26
+            // 
+            this.metroLabel26.AutoSize = true;
+            this.metroLabel26.Location = new System.Drawing.Point(705, 80);
+            this.metroLabel26.Name = "metroLabel26";
+            this.metroLabel26.Size = new System.Drawing.Size(129, 19);
+            this.metroLabel26.TabIndex = 24;
+            this.metroLabel26.Text = "Koeficjent róźnicy X: ";
+            // 
+            // metroLabel27
+            // 
+            this.metroLabel27.AutoSize = true;
+            this.metroLabel27.Location = new System.Drawing.Point(703, 226);
+            this.metroLabel27.Name = "metroLabel27";
+            this.metroLabel27.Size = new System.Drawing.Size(129, 19);
+            this.metroLabel27.TabIndex = 25;
+            this.metroLabel27.Text = "Koeficjent róźnicy Y: ";
+            // 
+            // metroLabel28
+            // 
+            this.metroLabel28.AutoSize = true;
+            this.metroLabel28.Location = new System.Drawing.Point(705, 395);
+            this.metroLabel28.Name = "metroLabel28";
+            this.metroLabel28.Size = new System.Drawing.Size(129, 19);
+            this.metroLabel28.TabIndex = 26;
+            this.metroLabel28.Text = "Koeficjent róźnicy Z: ";
+            // 
+            // metroTextBox2
+            // 
+            this.metroTextBox2.Location = new System.Drawing.Point(705, 103);
+            this.metroTextBox2.Name = "metroTextBox2";
+            this.metroTextBox2.Size = new System.Drawing.Size(125, 23);
+            this.metroTextBox2.TabIndex = 27;
+            // 
+            // metroTextBox3
+            // 
+            this.metroTextBox3.Location = new System.Drawing.Point(705, 249);
+            this.metroTextBox3.Name = "metroTextBox3";
+            this.metroTextBox3.Size = new System.Drawing.Size(125, 23);
+            this.metroTextBox3.TabIndex = 28;
+            // 
+            // metroTextBox4
+            // 
+            this.metroTextBox4.Location = new System.Drawing.Point(705, 418);
+            this.metroTextBox4.Name = "metroTextBox4";
+            this.metroTextBox4.Size = new System.Drawing.Size(125, 23);
+            this.metroTextBox4.TabIndex = 29;
             // 
             // Form1
             // 
@@ -726,13 +808,13 @@
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
             this.metroTabPage1.PerformLayout();
-            this.metroTabPage2.ResumeLayout(false);
-            this.metroTabPage2.PerformLayout();
             this.metroTabPage3.ResumeLayout(false);
             this.metroTabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureZ)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureY)).EndInit();
+            this.metroTabPage2.ResumeLayout(false);
+            this.metroTabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -800,6 +882,14 @@
         private System.Windows.Forms.PictureBox tab3_pictureZ;
         private System.Windows.Forms.PictureBox tab3_pictureX;
         private System.Windows.Forms.PictureBox tab3_pictureY;
+        private MetroFramework.Controls.MetroTextBox metroTextBox4;
+        private MetroFramework.Controls.MetroTextBox metroTextBox3;
+        private MetroFramework.Controls.MetroTextBox metroTextBox2;
+        private MetroFramework.Controls.MetroLabel metroLabel28;
+        private MetroFramework.Controls.MetroLabel metroLabel27;
+        private MetroFramework.Controls.MetroLabel metroLabel26;
+        private MetroFramework.Controls.MetroTextBox metroTextBox1;
+        private MetroFramework.Controls.MetroLabel metroLabel18;
     }
 }
 
