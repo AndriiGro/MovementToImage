@@ -17,7 +17,7 @@ namespace MovementToImage
     {
         Form1 form1;
 
-
+        public CorrelationCalculation() { }
         public CorrelationCalculation(Form1 formInstance)
         {
             form1 = formInstance;
@@ -95,10 +95,8 @@ namespace MovementToImage
             return correl;
         }
 
-        private PlotModel GeneratePlotModelForTwoArrays(List<double> doubleData1, List<double> doubleData2)
+        private PlotModel GeneratePlotModelForTwoArrays(PlotModel plotModel, List<double> doubleData1, List<double> doubleData2)
         {
-            PlotModel plotModel = new PlotModel();
-
             var plotSeries1 = new LineSeries { StrokeThickness = 1, MarkerSize = 1, Color = OxyColor.FromRgb(255, 0, 0) };
             var plotSeries2 = new LineSeries { StrokeThickness = 1, MarkerSize = 1, Color = OxyColor.FromRgb(255, 0, 0) };
 
@@ -114,7 +112,32 @@ namespace MovementToImage
             return plotModel;
         }
 
-        private MovementData ConvertInputDataToMovementData(string movementData)
+        public PlotModel GeneratePlotModelForTwoArrays(List<double> doubleData1, List<double> doubleData2)
+        {
+            PlotModel plotModel = new PlotModel();
+
+            return GeneratePlotModelForTwoArrays(plotModel, doubleData1, doubleData2);
+        }
+
+        public PlotModel GeneratePlotModelForTwoArraysWithoutAxis(List<double> doubleData1, List<double> doubleData2)
+        {
+            PlotModel plotModel = new PlotModel();
+            plotModel.Axes.Add(new LinearAxis()
+            {
+                Position = AxisPosition.Bottom,
+                IsAxisVisible = false
+            });
+
+            plotModel.Axes.Add(new LinearAxis()
+            {
+                Position = AxisPosition.Left,
+                IsAxisVisible = false
+            });
+
+            return GeneratePlotModelForTwoArrays(plotModel, doubleData1, doubleData2);
+        }
+
+        internal MovementData ConvertInputDataToMovementData(string movementData)
         {
             MovementData movement = new MovementData();
 

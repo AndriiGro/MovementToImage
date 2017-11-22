@@ -26,8 +26,8 @@ namespace MovementToImage
 
         private string delimiter;
 
-        private int xSize;
-        private int ySize;
+        public int xSize = 150;
+        public int ySize = 60;
 
         public Form1()
         {
@@ -61,8 +61,7 @@ namespace MovementToImage
                 myModel.Series.Add(plotSeriesZ);
                 plotView.Model = myModel;
 
-                var pngExporter = new PngExporter { Width = xSize, Height = ySize, Background = OxyColors.White };
-                Bitmap graph = pngExporter.ExportToBitmap(myModel);
+                Bitmap graph = ExportModelAsBitmap(myModel);
 
                 graph = ChangeBitmapColor(graph, Color.Black, Color.White);
                 graph = Crop(graph);
@@ -78,6 +77,13 @@ namespace MovementToImage
             {
                 MessageBox.Show(ex.Message, "Exception happens ;)", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        internal Bitmap ExportModelAsBitmap(PlotModel model)
+        {
+            var pngExporter = new PngExporter { Width = xSize, Height = ySize, Background = OxyColors.White };
+            Bitmap graph = pngExporter.ExportToBitmap(model);
+            return graph;
         }
 
         public static Bitmap Crop(Bitmap bmp)
@@ -190,7 +196,7 @@ namespace MovementToImage
             return data;
         }
 
-        public static Bitmap ChangeBitmapColor(Bitmap srcBitmap, Color oldColor, Color newColor)
+        internal Bitmap ChangeBitmapColor(Bitmap srcBitmap, Color oldColor, Color newColor)
         {
             Color actualColor;
             Bitmap newBitmap = new Bitmap(srcBitmap.Width, srcBitmap.Height);
@@ -285,6 +291,7 @@ namespace MovementToImage
             }
         }
 
+        //Tab Correlation calculation
         public void setPlotCorrX(PlotModel model) { plotCorrX.Model = model; }
         public void setPlotCorrY(PlotModel model) { plotCorrY.Model = model; }
         public void setPlotCorrZ(PlotModel model) { plotCorrZ.Model = model; }
@@ -293,10 +300,38 @@ namespace MovementToImage
         public void setCorrelationResultZ(string result) { txt_corrResultZ.Text = result; }
         public void setCorrelationResultAverage(string result) { txt_CorrResult.Text = result; }
 
+        //Tab Distance coefficient
+        public void setTab3PictureX(Image image) { tab3_pictureX.Image = image; }
+        public void setTab3PictureY(Image image) { tab3_pictureY.Image = image; }
+        public void setTab3PictureZ(Image image) { tab3_pictureZ.Image = image; }
+        public void setTab3DistanceCoefficientX(string result) { tab3_coefX.Text = result; }
+        public void setTab3DistanceCoefficientY(string result) { tab3_coefY.Text = result; }
+        public void setTab3DistanceCoefficientZ(string result) { tab3_coefZ.Text = result; }
+        public void setTab3DistanceCoefficientAverage(string result) { tab3_coefAverage.Text = result; }
+
         private void btn_clearCorrelationData_Click(object sender, EventArgs e)
         {
             txt_Movement1.Text = string.Empty;
             txt_Movement2.Text = string.Empty;
+        }
+
+        private void tab3_calculateCoef_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var distanceCoefficientDataManager = new DistanceCoefficientCalculation(this);
+                distanceCoefficientDataManager.ProcessData(tab3_Movement1.Text, tab3_Movement2.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Exception happens ;)", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void tab3_cleanData_Click(object sender, EventArgs e)
+        {
+            tab3_Movement1.Text = string.Empty;
+            tab3_Movement2.Text = string.Empty;
         }
     }
 }
