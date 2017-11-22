@@ -18,7 +18,7 @@ namespace MovementToImage
         Form1 mainForm;
         Color plotBackgroundColor = Color.White;
         Color plotColor = Color.Red;
-        Color distanceFillingColor = Color.Gold;
+        Color differenceFillingColor = Color.Gold;
         CorrelationCalculation helper;
 
         public DistanceCoefficientCalculation(Form1 formInstance)
@@ -32,41 +32,98 @@ namespace MovementToImage
             MovementData movement1 = helper.ConvertInputDataToMovementData(movementData1);
             MovementData movement2 = helper.ConvertInputDataToMovementData(movementData2);
 
-            PlotModel plotModelX = helper.GeneratePlotModelForTwoArraysWithoutAxis(movement1.doubleDataX, movement2.doubleDataX);
-            PlotModel plotModelY = helper.GeneratePlotModelForTwoArraysWithoutAxis(movement1.doubleDataY, movement2.doubleDataY);
-            PlotModel plotModelZ = helper.GeneratePlotModelForTwoArraysWithoutAxis(movement1.doubleDataZ, movement2.doubleDataZ);
+            MovementForDistanceCoeffitient movementX = new MovementForDistanceCoeffitient(movement1.doubleDataX, movement2.doubleDataX);
+            MovementForDistanceCoeffitient movementY = new MovementForDistanceCoeffitient(movement1.doubleDataY, movement2.doubleDataZ);
+            MovementForDistanceCoeffitient movementZ = new MovementForDistanceCoeffitient(movement1.doubleDataY, movement2.doubleDataZ);
 
-            Bitmap plotX = Form1.Crop(mainForm.ChangeBitmapColor(mainForm.ExportModelAsBitmap(plotModelX), Color.Black, Color.White));
-            Bitmap plotY = Form1.Crop(mainForm.ChangeBitmapColor(mainForm.ExportModelAsBitmap(plotModelY), Color.Black, Color.White));
-            Bitmap plotZ = Form1.Crop(mainForm.ChangeBitmapColor(mainForm.ExportModelAsBitmap(plotModelZ), Color.Black, Color.White));
-            
-            mainForm.setTab3PictureX(plotX);
-            mainForm.setTab3PictureY(plotY);
-            mainForm.setTab3PictureZ(plotZ);
+            List<DataForCountingDifference> differencesX = GetDifferences(movementX);
+            List<DataForCountingDifference> differencesY = GetDifferences(movementY);
+            List<DataForCountingDifference> differencesZ = GetDifferences(movementZ);
 
-            plotX = FillDifferenceWithColor(plotX);
-            plotY = FillDifferenceWithColor(plotY);
-            plotZ = FillDifferenceWithColor(plotZ);
-
-            mainForm.setTab3PictureX(plotX);
-            mainForm.setTab3PictureY(plotY);
-            mainForm.setTab3PictureZ(plotZ);
-
-            double distanceCoefX = CalculateDistanceCoefficientInPlot(plotX);
-            double distanceCoefY = CalculateDistanceCoefficientInPlot(plotY);
-            double distanceCoefZ = CalculateDistanceCoefficientInPlot(plotZ);
-            double distanceCoefAverage = (distanceCoefX + distanceCoefX + distanceCoefX) / 3.0;
+            double distanceCoefX = CalculateDistanceCoefficient(differencesX);
+            double distanceCoefY = CalculateDistanceCoefficient(differencesY);
+            double distanceCoefZ = CalculateDistanceCoefficient(differencesZ);
+            double distanceCoefAverage = (distanceCoefX + distanceCoefY + distanceCoefZ) / 3.0;
 
             mainForm.setTab3DistanceCoefficientX(distanceCoefX.ToString("0.####"));
             mainForm.setTab3DistanceCoefficientY(distanceCoefY.ToString("0.####"));
             mainForm.setTab3DistanceCoefficientZ(distanceCoefZ.ToString("0.####"));
             mainForm.setTab3DistanceCoefficientAverage(distanceCoefAverage.ToString("0.####"));
+
+            Bitmap visualizationX = GenerateDifferencesVisualizationImage(differencesX);
+            Bitmap visualizationY = GenerateDifferencesVisualizationImage(differencesY);
+            Bitmap visualizationZ = GenerateDifferencesVisualizationImage(differencesZ);
+            
+            mainForm.setTab3PictureX(visualizationX);
+            mainForm.setTab3PictureY(visualizationY);
+            mainForm.setTab3PictureZ(visualizationZ);            
+        }
+
+        private Bitmap GenerateDifferencesVisualizationImage(List<DataForCountingDifference> differences)
+        {
+            Bitmap visualization = new Bitmap(differences.Count, (int)(differences.Count * 0.7));
+
+            for (int i = 0; i < visualization.Width; i++)
+            {
+                List<Color> verticalImageLine = new List<Color>();
+                int differencePixels = (int)(Math.Abs(differences[i].Difference / differences[i].MaxValue) * visualization.Height);
+                differencePixels = differencePixels == 0 ? 1 : differencePixels;
+
+                int startPixels = (int)(Math.Abs(differences[i].StartValue / differences[i].MaxValue) * visualization.Height);
+                verticalImageLine = Enumerable.Repeat(plotBackgroundColor, startPixels).ToList();
+
+                for (int j = 0; j < differencePixels; j++)
+                {
+                    verticalImageLine.Add(differenceFillingColor);
+                }
+
+                for (int y = 0; y < (visualization.Height - differencePixels - startPixels); y++)
+                {
+                    verticalImageLine.Add(plotBackgroundColor);
+                }
+
+                for (int z = 0; z < visualization.Height; z++)
+                {
+                    visualization.SetPixel(i, z, verticalImageLine[z]);
+                }
+            }
+
+            return visualization;
+        }
+
+        private double CalculateDistanceCoefficient(List<DataForCountingDifference> differences)
+        {
+            double differencesSum = 0;
+            foreach (DataForCountingDifference difference in differences)
+            {
+                differencesSum += difference.Difference;
+            }
+
+            double maxSum = differences.Count * Math.Abs(differences[0].MinValue - differences[0].MaxValue);
+
+            return differencesSum / maxSum;
+        }
+
+        private List<DataForCountingDifference> GetDifferences(MovementForDistanceCoeffitient movement)
+        {
+            List<DataForCountingDifference> differences = new List<DataForCountingDifference>();
+            for (int i = 0; i < movement.Lenght; i++)
+            {
+                DataForCountingDifference data = new DataForCountingDifference();
+                data.MinValue = movement.Bounds.Lower;
+                data.MaxValue = movement.Bounds.Upper;
+                data.Difference = Math.Abs(movement.Movement1Data[i] - movement.Movement2Data[2]);
+                data.StartValue = Math.Min(movement.Movement1Data[i], movement.Movement2Data[2]);
+                differences.Add(data);
+            }
+
+            return differences;
         }
 
         private double CalculateDistanceCoefficientInPlot(Bitmap plot)
         {
             int plotPixelsCount = CountPixelsOfColor(plot, plotColor);
-            int distanceFillingPixelsCount = CountPixelsOfColor(plot, distanceFillingColor);
+            int distanceFillingPixelsCount = CountPixelsOfColor(plot, differenceFillingColor);
             int backgroundPixelsCount
                 = ((plot.Width * plot.Height) - plotPixelsCount - distanceFillingPixelsCount);
 
@@ -138,7 +195,7 @@ namespace MovementToImage
             {
                 if (line[i].ToArgb() == plotBackgroundColor.ToArgb())
                 {
-                    filledLine.Add(isBetweenPlot ? distanceFillingColor : plotBackgroundColor);
+                    filledLine.Add(isBetweenPlot ? differenceFillingColor : plotBackgroundColor);
                     continue;
                 }
 
@@ -151,5 +208,14 @@ namespace MovementToImage
 
             return filledLine;
         }
+
+        private class DataForCountingDifference
+        {
+            public double StartValue { get; set; }
+            public double Difference { get; set; }
+            public double MinValue { get; set; }
+            public double MaxValue { get; set; }
+        }
+
     }
 }
