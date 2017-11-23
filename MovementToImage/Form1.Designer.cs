@@ -76,6 +76,7 @@
             this.txt_Movement2 = new MetroFramework.Controls.MetroTextBox();
             this.txt_Movement1 = new MetroFramework.Controls.MetroTextBox();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
+            this.tab3_pictureY = new System.Windows.Forms.PictureBox();
             this.tab3_pictureZ = new System.Windows.Forms.PictureBox();
             this.tab3_pictureX = new System.Windows.Forms.PictureBox();
             this.tab3_coefAverage = new MetroFramework.Controls.MetroTextBox();
@@ -96,16 +97,21 @@
             this.tab3_Movement2 = new MetroFramework.Controls.MetroTextBox();
             this.tab3_Movement1 = new MetroFramework.Controls.MetroTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tab3_pictureY = new System.Windows.Forms.PictureBox();
+            this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
+            this.tab4_btnOpenFile = new MetroFramework.Controls.MetroButton();
+            this.tab4_labelFilePath = new MetroFramework.Controls.MetroLabel();
+            this.tab4_txtMovesRanges = new MetroFramework.Controls.MetroTextBox();
+            this.tab4_btnParseData = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.resultPictureBox)).BeginInit();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureZ)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureY)).BeginInit();
+            this.metroTabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // plotView
@@ -244,9 +250,10 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Controls.Add(this.metroTabPage3);
+            this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Location = new System.Drawing.Point(4, 113);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 2;
+            this.metroTabControl1.SelectedIndex = 3;
             this.metroTabControl1.Size = new System.Drawing.Size(944, 539);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Red;
             this.metroTabControl1.TabIndex = 15;
@@ -606,6 +613,15 @@
             this.metroTabPage3.Text = "Odległośći bezwzględne";
             this.metroTabPage3.VerticalScrollbarBarColor = true;
             // 
+            // tab3_pictureY
+            // 
+            this.tab3_pictureY.Location = new System.Drawing.Point(512, 168);
+            this.tab3_pictureY.Name = "tab3_pictureY";
+            this.tab3_pictureY.Size = new System.Drawing.Size(236, 140);
+            this.tab3_pictureY.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tab3_pictureY.TabIndex = 27;
+            this.tab3_pictureY.TabStop = false;
+            // 
             // tab3_pictureZ
             // 
             this.tab3_pictureZ.Location = new System.Drawing.Point(512, 314);
@@ -784,14 +800,54 @@
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
-            // tab3_pictureY
+            // metroTabPage4
             // 
-            this.tab3_pictureY.Location = new System.Drawing.Point(512, 168);
-            this.tab3_pictureY.Name = "tab3_pictureY";
-            this.tab3_pictureY.Size = new System.Drawing.Size(236, 140);
-            this.tab3_pictureY.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tab3_pictureY.TabIndex = 27;
-            this.tab3_pictureY.TabStop = false;
+            this.metroTabPage4.Controls.Add(this.tab4_btnParseData);
+            this.metroTabPage4.Controls.Add(this.tab4_txtMovesRanges);
+            this.metroTabPage4.Controls.Add(this.tab4_labelFilePath);
+            this.metroTabPage4.Controls.Add(this.tab4_btnOpenFile);
+            this.metroTabPage4.HorizontalScrollbarBarColor = true;
+            this.metroTabPage4.Location = new System.Drawing.Point(4, 35);
+            this.metroTabPage4.Name = "metroTabPage4";
+            this.metroTabPage4.Size = new System.Drawing.Size(936, 500);
+            this.metroTabPage4.TabIndex = 3;
+            this.metroTabPage4.Text = "Parsowanie danych";
+            this.metroTabPage4.VerticalScrollbarBarColor = true;
+            // 
+            // tab4_btnOpenFile
+            // 
+            this.tab4_btnOpenFile.Location = new System.Drawing.Point(15, 16);
+            this.tab4_btnOpenFile.Name = "tab4_btnOpenFile";
+            this.tab4_btnOpenFile.Size = new System.Drawing.Size(121, 23);
+            this.tab4_btnOpenFile.TabIndex = 2;
+            this.tab4_btnOpenFile.Text = "Otwórz plik";
+            this.tab4_btnOpenFile.Click += new System.EventHandler(this.tab4_btnOpenFile_Click);
+            // 
+            // tab4_labelFilePath
+            // 
+            this.tab4_labelFilePath.AutoSize = true;
+            this.tab4_labelFilePath.Location = new System.Drawing.Point(15, 46);
+            this.tab4_labelFilePath.Name = "tab4_labelFilePath";
+            this.tab4_labelFilePath.Size = new System.Drawing.Size(168, 19);
+            this.tab4_labelFilePath.TabIndex = 3;
+            this.tab4_labelFilePath.Text = "Otwórz plik dla parsowania";
+            // 
+            // tab4_txtMovesRanges
+            // 
+            this.tab4_txtMovesRanges.Location = new System.Drawing.Point(15, 77);
+            this.tab4_txtMovesRanges.Multiline = true;
+            this.tab4_txtMovesRanges.Name = "tab4_txtMovesRanges";
+            this.tab4_txtMovesRanges.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tab4_txtMovesRanges.Size = new System.Drawing.Size(256, 387);
+            this.tab4_txtMovesRanges.TabIndex = 4;
+            // 
+            // tab4_btnParseData
+            // 
+            this.tab4_btnParseData.Location = new System.Drawing.Point(142, 16);
+            this.tab4_btnParseData.Name = "tab4_btnParseData";
+            this.tab4_btnParseData.Size = new System.Drawing.Size(129, 23);
+            this.tab4_btnParseData.TabIndex = 5;
+            this.tab4_btnParseData.Text = "Parsuj";
             // 
             // Form1
             // 
@@ -812,10 +868,12 @@
             this.metroTabPage2.PerformLayout();
             this.metroTabPage3.ResumeLayout(false);
             this.metroTabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureZ)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureY)).EndInit();
+            this.metroTabPage4.ResumeLayout(false);
+            this.metroTabPage4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -890,6 +948,11 @@
         private MetroFramework.Controls.MetroTextBox tab2_EnergyCoefAverage;
         private MetroFramework.Controls.MetroLabel metroLabel18;
         private System.Windows.Forms.PictureBox tab3_pictureY;
+        private MetroFramework.Controls.MetroTabPage metroTabPage4;
+        private MetroFramework.Controls.MetroButton tab4_btnParseData;
+        private MetroFramework.Controls.MetroTextBox tab4_txtMovesRanges;
+        private MetroFramework.Controls.MetroLabel tab4_labelFilePath;
+        private MetroFramework.Controls.MetroButton tab4_btnOpenFile;
     }
 }
 

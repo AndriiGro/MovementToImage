@@ -340,5 +340,18 @@ namespace MovementToImage
             tab3_Movement1.Text = string.Empty;
             tab3_Movement2.Text = string.Empty;
         }
+
+        private void tab4_btnOpenFile_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var parser = new ParsingManager(this);
+                parser.StartProcess();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Exception happens ;)", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
