@@ -45,6 +45,37 @@ namespace MovementToImage
             form1.SetCorrelationResultY(correlationY.ToString("0.####"));
             form1.SetCorrelationResultZ(correlationZ.ToString("0.####"));
             form1.SetCorrelationResultAverage(correlationAverage.ToString("0.####"));
+
+            double energyCoefX = CalculateEnergyDifferenceCoef(movement1.doubleDataX, movement2.doubleDataX);
+            double energyCoefY = CalculateEnergyDifferenceCoef(movement1.doubleDataY, movement2.doubleDataY);
+            double energyCoefZ = CalculateEnergyDifferenceCoef(movement1.doubleDataZ, movement2.doubleDataZ);
+            double energyCoefAverage = (energyCoefX + energyCoefY + energyCoefZ) / 3.0;
+
+            form1.SetEnergyCoefficientX(energyCoefX.ToString("0.####"));
+            form1.SetEnergyCoefficientY(energyCoefY.ToString("0.####"));
+            form1.SetEnergyCoefficientZ(energyCoefZ.ToString("0.####"));
+            form1.SetEnergyCoefficientAverage(energyCoefAverage.ToString("0.####"));
+        }
+
+        private double CalculateEnergyDifferenceCoef(List<double> doubleData1, List<double> doubleData2)
+        {
+            double energy1 = CalculateEnergyOfArray(doubleData1);
+            double energy2 = CalculateEnergyOfArray(doubleData2);
+
+            List<double> merge = new List<double>();
+            merge.AddRange(doubleData1);
+            merge.AddRange(doubleData2);
+
+            double maxEnergyDifference = Math.Abs(merge.Min()) * Math.Abs(merge.Max()) * doubleData1.Count;
+
+            return 1 - (Math.Abs(energy1 - energy2) / maxEnergyDifference);
+        }
+
+        private double CalculateEnergyOfArray(List<double> doubleData)
+        {
+            double energy = 0;
+            doubleData.ForEach(value => energy += Math.Abs(value) * Math.Abs(value));
+            return energy;
         }
 
         private double GetCorrelationForTwoArrays(List<double> array1, List<double> array2)

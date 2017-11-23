@@ -46,28 +46,15 @@
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
-            this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
-            this.tab3_pictureZ = new System.Windows.Forms.PictureBox();
-            this.tab3_pictureX = new System.Windows.Forms.PictureBox();
-            this.tab3_pictureY = new System.Windows.Forms.PictureBox();
-            this.tab3_coefAverage = new MetroFramework.Controls.MetroTextBox();
-            this.tab3_cleanData = new MetroFramework.Controls.MetroButton();
-            this.tab3_calculateCoef = new MetroFramework.Controls.MetroButton();
-            this.tab3_coefZ = new MetroFramework.Controls.MetroTextBox();
-            this.tab3_coefY = new MetroFramework.Controls.MetroTextBox();
-            this.tab3_coefX = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel25 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel24 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel23 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel22 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel21 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel20 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel17 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
-            this.tab3_Movement2 = new MetroFramework.Controls.MetroTextBox();
-            this.tab3_Movement1 = new MetroFramework.Controls.MetroTextBox();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.tab2_EnergyCoefZ = new MetroFramework.Controls.MetroTextBox();
+            this.tab2_EnergyCoefY = new MetroFramework.Controls.MetroTextBox();
+            this.tab2_EnergyCoefX = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel28 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel27 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel26 = new MetroFramework.Controls.MetroLabel();
+            this.tab2_EnergyCoefAverage = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
             this.txt_corrResultZ = new MetroFramework.Controls.MetroTextBox();
             this.txt_corrResultY = new MetroFramework.Controls.MetroTextBox();
             this.txt_corrResultX = new MetroFramework.Controls.MetroTextBox();
@@ -88,24 +75,37 @@
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.txt_Movement2 = new MetroFramework.Controls.MetroTextBox();
             this.txt_Movement1 = new MetroFramework.Controls.MetroTextBox();
+            this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
+            this.tab3_pictureZ = new System.Windows.Forms.PictureBox();
+            this.tab3_pictureX = new System.Windows.Forms.PictureBox();
+            this.tab3_coefAverage = new MetroFramework.Controls.MetroTextBox();
+            this.tab3_cleanData = new MetroFramework.Controls.MetroButton();
+            this.tab3_calculateCoef = new MetroFramework.Controls.MetroButton();
+            this.tab3_coefZ = new MetroFramework.Controls.MetroTextBox();
+            this.tab3_coefY = new MetroFramework.Controls.MetroTextBox();
+            this.tab3_coefX = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel25 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel24 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel23 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel22 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel21 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel20 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel17 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
+            this.tab3_Movement2 = new MetroFramework.Controls.MetroTextBox();
+            this.tab3_Movement1 = new MetroFramework.Controls.MetroTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel26 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel27 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel28 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
+            this.tab3_pictureY = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.resultPictureBox)).BeginInit();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
+            this.metroTabPage2.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureZ)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureX)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureY)).BeginInit();
-            this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureY)).BeginInit();
             this.SuspendLayout();
             // 
             // plotView
@@ -246,7 +246,7 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.Location = new System.Drawing.Point(4, 113);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 2;
             this.metroTabControl1.Size = new System.Drawing.Size(944, 539);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Red;
             this.metroTabControl1.TabIndex = 15;
@@ -289,222 +289,15 @@
             this.metroLabel15.TabIndex = 15;
             this.metroLabel15.Text = "wykres";
             // 
-            // metroTabPage3
-            // 
-            this.metroTabPage3.Controls.Add(this.tab3_pictureZ);
-            this.metroTabPage3.Controls.Add(this.tab3_pictureX);
-            this.metroTabPage3.Controls.Add(this.tab3_pictureY);
-            this.metroTabPage3.Controls.Add(this.tab3_coefAverage);
-            this.metroTabPage3.Controls.Add(this.tab3_cleanData);
-            this.metroTabPage3.Controls.Add(this.tab3_calculateCoef);
-            this.metroTabPage3.Controls.Add(this.tab3_coefZ);
-            this.metroTabPage3.Controls.Add(this.tab3_coefY);
-            this.metroTabPage3.Controls.Add(this.tab3_coefX);
-            this.metroTabPage3.Controls.Add(this.metroLabel25);
-            this.metroTabPage3.Controls.Add(this.metroLabel24);
-            this.metroTabPage3.Controls.Add(this.metroLabel23);
-            this.metroTabPage3.Controls.Add(this.metroLabel22);
-            this.metroTabPage3.Controls.Add(this.metroLabel21);
-            this.metroTabPage3.Controls.Add(this.metroLabel20);
-            this.metroTabPage3.Controls.Add(this.metroLabel19);
-            this.metroTabPage3.Controls.Add(this.metroLabel17);
-            this.metroTabPage3.Controls.Add(this.metroLabel16);
-            this.metroTabPage3.Controls.Add(this.tab3_Movement2);
-            this.metroTabPage3.Controls.Add(this.tab3_Movement1);
-            this.metroTabPage3.HorizontalScrollbarBarColor = true;
-            this.metroTabPage3.Location = new System.Drawing.Point(4, 35);
-            this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(936, 500);
-            this.metroTabPage3.TabIndex = 2;
-            this.metroTabPage3.Text = "Odległośći bezwzględne";
-            this.metroTabPage3.VerticalScrollbarBarColor = true;
-            // 
-            // tab3_pictureZ
-            // 
-            this.tab3_pictureZ.Location = new System.Drawing.Point(512, 314);
-            this.tab3_pictureZ.Name = "tab3_pictureZ";
-            this.tab3_pictureZ.Size = new System.Drawing.Size(236, 141);
-            this.tab3_pictureZ.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tab3_pictureZ.TabIndex = 26;
-            this.tab3_pictureZ.TabStop = false;
-            // 
-            // tab3_pictureX
-            // 
-            this.tab3_pictureX.Location = new System.Drawing.Point(512, 21);
-            this.tab3_pictureX.Name = "tab3_pictureX";
-            this.tab3_pictureX.Size = new System.Drawing.Size(236, 140);
-            this.tab3_pictureX.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tab3_pictureX.TabIndex = 25;
-            this.tab3_pictureX.TabStop = false;
-            // 
-            // tab3_pictureY
-            // 
-            this.tab3_pictureY.Location = new System.Drawing.Point(512, 167);
-            this.tab3_pictureY.Name = "tab3_pictureY";
-            this.tab3_pictureY.Size = new System.Drawing.Size(236, 141);
-            this.tab3_pictureY.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tab3_pictureY.TabIndex = 24;
-            this.tab3_pictureY.TabStop = false;
-            // 
-            // tab3_coefAverage
-            // 
-            this.tab3_coefAverage.Location = new System.Drawing.Point(695, 471);
-            this.tab3_coefAverage.Name = "tab3_coefAverage";
-            this.tab3_coefAverage.ReadOnly = true;
-            this.tab3_coefAverage.Size = new System.Drawing.Size(89, 23);
-            this.tab3_coefAverage.TabIndex = 23;
-            // 
-            // tab3_cleanData
-            // 
-            this.tab3_cleanData.Location = new System.Drawing.Point(822, 470);
-            this.tab3_cleanData.Name = "tab3_cleanData";
-            this.tab3_cleanData.Size = new System.Drawing.Size(91, 23);
-            this.tab3_cleanData.TabIndex = 22;
-            this.tab3_cleanData.Text = "Wyczyść dane";
-            this.tab3_cleanData.Click += new System.EventHandler(this.tab3_cleanData_Click);
-            // 
-            // tab3_calculateCoef
-            // 
-            this.tab3_calculateCoef.Location = new System.Drawing.Point(509, 471);
-            this.tab3_calculateCoef.Name = "tab3_calculateCoef";
-            this.tab3_calculateCoef.Size = new System.Drawing.Size(103, 23);
-            this.tab3_calculateCoef.Style = MetroFramework.MetroColorStyle.Red;
-            this.tab3_calculateCoef.TabIndex = 21;
-            this.tab3_calculateCoef.Text = "Oblicz koeficjent";
-            this.tab3_calculateCoef.Click += new System.EventHandler(this.tab3_calculateCoef_Click);
-            // 
-            // tab3_coefZ
-            // 
-            this.tab3_coefZ.Location = new System.Drawing.Point(770, 336);
-            this.tab3_coefZ.Name = "tab3_coefZ";
-            this.tab3_coefZ.ReadOnly = true;
-            this.tab3_coefZ.Size = new System.Drawing.Size(143, 23);
-            this.tab3_coefZ.TabIndex = 20;
-            // 
-            // tab3_coefY
-            // 
-            this.tab3_coefY.Location = new System.Drawing.Point(770, 190);
-            this.tab3_coefY.Name = "tab3_coefY";
-            this.tab3_coefY.ReadOnly = true;
-            this.tab3_coefY.Size = new System.Drawing.Size(143, 23);
-            this.tab3_coefY.TabIndex = 19;
-            // 
-            // tab3_coefX
-            // 
-            this.tab3_coefX.Location = new System.Drawing.Point(770, 43);
-            this.tab3_coefX.Name = "tab3_coefX";
-            this.tab3_coefX.ReadOnly = true;
-            this.tab3_coefX.Size = new System.Drawing.Size(143, 23);
-            this.tab3_coefX.TabIndex = 18;
-            // 
-            // metroLabel25
-            // 
-            this.metroLabel25.AutoSize = true;
-            this.metroLabel25.Location = new System.Drawing.Point(618, 474);
-            this.metroLabel25.Name = "metroLabel25";
-            this.metroLabel25.Size = new System.Drawing.Size(82, 19);
-            this.metroLabel25.TabIndex = 17;
-            this.metroLabel25.Text = "Koeficjent = ";
-            // 
-            // metroLabel24
-            // 
-            this.metroLabel24.AutoSize = true;
-            this.metroLabel24.Location = new System.Drawing.Point(476, 20);
-            this.metroLabel24.Name = "metroLabel24";
-            this.metroLabel24.Size = new System.Drawing.Size(17, 19);
-            this.metroLabel24.TabIndex = 16;
-            this.metroLabel24.Text = "X";
-            // 
-            // metroLabel23
-            // 
-            this.metroLabel23.AutoSize = true;
-            this.metroLabel23.Location = new System.Drawing.Point(486, 314);
-            this.metroLabel23.Name = "metroLabel23";
-            this.metroLabel23.Size = new System.Drawing.Size(17, 19);
-            this.metroLabel23.TabIndex = 15;
-            this.metroLabel23.Text = "Z";
-            // 
-            // metroLabel22
-            // 
-            this.metroLabel22.AutoSize = true;
-            this.metroLabel22.Location = new System.Drawing.Point(486, 168);
-            this.metroLabel22.Name = "metroLabel22";
-            this.metroLabel22.Size = new System.Drawing.Size(17, 19);
-            this.metroLabel22.TabIndex = 14;
-            this.metroLabel22.Text = "Y";
-            // 
-            // metroLabel21
-            // 
-            this.metroLabel21.AutoSize = true;
-            this.metroLabel21.Location = new System.Drawing.Point(770, 314);
-            this.metroLabel21.Name = "metroLabel21";
-            this.metroLabel21.Size = new System.Drawing.Size(102, 19);
-            this.metroLabel21.TabIndex = 13;
-            this.metroLabel21.Text = "Koeficjent dla Z:";
-            // 
-            // metroLabel20
-            // 
-            this.metroLabel20.AutoSize = true;
-            this.metroLabel20.Location = new System.Drawing.Point(770, 168);
-            this.metroLabel20.Name = "metroLabel20";
-            this.metroLabel20.Size = new System.Drawing.Size(102, 19);
-            this.metroLabel20.TabIndex = 12;
-            this.metroLabel20.Text = "Koeficjent dla Y:";
-            // 
-            // metroLabel19
-            // 
-            this.metroLabel19.AutoSize = true;
-            this.metroLabel19.Location = new System.Drawing.Point(770, 21);
-            this.metroLabel19.Name = "metroLabel19";
-            this.metroLabel19.Size = new System.Drawing.Size(102, 19);
-            this.metroLabel19.TabIndex = 11;
-            this.metroLabel19.Text = "Koeficjent dla X:";
-            // 
-            // metroLabel17
-            // 
-            this.metroLabel17.AutoSize = true;
-            this.metroLabel17.Location = new System.Drawing.Point(3, 266);
-            this.metroLabel17.Name = "metroLabel17";
-            this.metroLabel17.Size = new System.Drawing.Size(89, 19);
-            this.metroLabel17.TabIndex = 6;
-            this.metroLabel17.Text = "Dane Ruchu 2";
-            // 
-            // metroLabel16
-            // 
-            this.metroLabel16.AutoSize = true;
-            this.metroLabel16.Location = new System.Drawing.Point(3, 21);
-            this.metroLabel16.Name = "metroLabel16";
-            this.metroLabel16.Size = new System.Drawing.Size(87, 19);
-            this.metroLabel16.TabIndex = 5;
-            this.metroLabel16.Text = "Dane Ruchu 1";
-            // 
-            // tab3_Movement2
-            // 
-            this.tab3_Movement2.Location = new System.Drawing.Point(130, 266);
-            this.tab3_Movement2.Multiline = true;
-            this.tab3_Movement2.Name = "tab3_Movement2";
-            this.tab3_Movement2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tab3_Movement2.Size = new System.Drawing.Size(329, 228);
-            this.tab3_Movement2.TabIndex = 3;
-            // 
-            // tab3_Movement1
-            // 
-            this.tab3_Movement1.Location = new System.Drawing.Point(130, 21);
-            this.tab3_Movement1.Multiline = true;
-            this.tab3_Movement1.Name = "tab3_Movement1";
-            this.tab3_Movement1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tab3_Movement1.Size = new System.Drawing.Size(329, 239);
-            this.tab3_Movement1.TabIndex = 2;
-            // 
             // metroTabPage2
             // 
-            this.metroTabPage2.Controls.Add(this.metroTextBox4);
-            this.metroTabPage2.Controls.Add(this.metroTextBox3);
-            this.metroTabPage2.Controls.Add(this.metroTextBox2);
+            this.metroTabPage2.Controls.Add(this.tab2_EnergyCoefZ);
+            this.metroTabPage2.Controls.Add(this.tab2_EnergyCoefY);
+            this.metroTabPage2.Controls.Add(this.tab2_EnergyCoefX);
             this.metroTabPage2.Controls.Add(this.metroLabel28);
             this.metroTabPage2.Controls.Add(this.metroLabel27);
             this.metroTabPage2.Controls.Add(this.metroLabel26);
-            this.metroTabPage2.Controls.Add(this.metroTextBox1);
+            this.metroTabPage2.Controls.Add(this.tab2_EnergyCoefAverage);
             this.metroTabPage2.Controls.Add(this.metroLabel18);
             this.metroTabPage2.Controls.Add(this.txt_corrResultZ);
             this.metroTabPage2.Controls.Add(this.txt_corrResultY);
@@ -533,6 +326,71 @@
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Korelacja i Róźnica energii";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
+            // 
+            // tab2_EnergyCoefZ
+            // 
+            this.tab2_EnergyCoefZ.Location = new System.Drawing.Point(705, 418);
+            this.tab2_EnergyCoefZ.Name = "tab2_EnergyCoefZ";
+            this.tab2_EnergyCoefZ.Size = new System.Drawing.Size(125, 23);
+            this.tab2_EnergyCoefZ.TabIndex = 29;
+            // 
+            // tab2_EnergyCoefY
+            // 
+            this.tab2_EnergyCoefY.Location = new System.Drawing.Point(705, 249);
+            this.tab2_EnergyCoefY.Name = "tab2_EnergyCoefY";
+            this.tab2_EnergyCoefY.Size = new System.Drawing.Size(125, 23);
+            this.tab2_EnergyCoefY.TabIndex = 28;
+            // 
+            // tab2_EnergyCoefX
+            // 
+            this.tab2_EnergyCoefX.Location = new System.Drawing.Point(705, 103);
+            this.tab2_EnergyCoefX.Name = "tab2_EnergyCoefX";
+            this.tab2_EnergyCoefX.Size = new System.Drawing.Size(125, 23);
+            this.tab2_EnergyCoefX.TabIndex = 27;
+            // 
+            // metroLabel28
+            // 
+            this.metroLabel28.AutoSize = true;
+            this.metroLabel28.Location = new System.Drawing.Point(705, 395);
+            this.metroLabel28.Name = "metroLabel28";
+            this.metroLabel28.Size = new System.Drawing.Size(129, 19);
+            this.metroLabel28.TabIndex = 26;
+            this.metroLabel28.Text = "Koeficjent róźnicy Z: ";
+            // 
+            // metroLabel27
+            // 
+            this.metroLabel27.AutoSize = true;
+            this.metroLabel27.Location = new System.Drawing.Point(703, 226);
+            this.metroLabel27.Name = "metroLabel27";
+            this.metroLabel27.Size = new System.Drawing.Size(129, 19);
+            this.metroLabel27.TabIndex = 25;
+            this.metroLabel27.Text = "Koeficjent róźnicy Y: ";
+            // 
+            // metroLabel26
+            // 
+            this.metroLabel26.AutoSize = true;
+            this.metroLabel26.Location = new System.Drawing.Point(705, 80);
+            this.metroLabel26.Name = "metroLabel26";
+            this.metroLabel26.Size = new System.Drawing.Size(129, 19);
+            this.metroLabel26.TabIndex = 24;
+            this.metroLabel26.Text = "Koeficjent róźnicy X: ";
+            // 
+            // tab2_EnergyCoefAverage
+            // 
+            this.tab2_EnergyCoefAverage.Location = new System.Drawing.Point(834, 477);
+            this.tab2_EnergyCoefAverage.Name = "tab2_EnergyCoefAverage";
+            this.tab2_EnergyCoefAverage.ReadOnly = true;
+            this.tab2_EnergyCoefAverage.Size = new System.Drawing.Size(97, 23);
+            this.tab2_EnergyCoefAverage.TabIndex = 23;
+            // 
+            // metroLabel18
+            // 
+            this.metroLabel18.AutoSize = true;
+            this.metroLabel18.Location = new System.Drawing.Point(701, 481);
+            this.metroLabel18.Name = "metroLabel18";
+            this.metroLabel18.Size = new System.Drawing.Size(127, 19);
+            this.metroLabel18.TabIndex = 22;
+            this.metroLabel18.Text = "Koeficjent róźnicy = ";
             // 
             // txt_corrResultZ
             // 
@@ -718,6 +576,204 @@
             this.txt_Movement1.Size = new System.Drawing.Size(329, 239);
             this.txt_Movement1.TabIndex = 2;
             // 
+            // metroTabPage3
+            // 
+            this.metroTabPage3.Controls.Add(this.tab3_pictureY);
+            this.metroTabPage3.Controls.Add(this.tab3_pictureZ);
+            this.metroTabPage3.Controls.Add(this.tab3_pictureX);
+            this.metroTabPage3.Controls.Add(this.tab3_coefAverage);
+            this.metroTabPage3.Controls.Add(this.tab3_cleanData);
+            this.metroTabPage3.Controls.Add(this.tab3_calculateCoef);
+            this.metroTabPage3.Controls.Add(this.tab3_coefZ);
+            this.metroTabPage3.Controls.Add(this.tab3_coefY);
+            this.metroTabPage3.Controls.Add(this.tab3_coefX);
+            this.metroTabPage3.Controls.Add(this.metroLabel25);
+            this.metroTabPage3.Controls.Add(this.metroLabel24);
+            this.metroTabPage3.Controls.Add(this.metroLabel23);
+            this.metroTabPage3.Controls.Add(this.metroLabel22);
+            this.metroTabPage3.Controls.Add(this.metroLabel21);
+            this.metroTabPage3.Controls.Add(this.metroLabel20);
+            this.metroTabPage3.Controls.Add(this.metroLabel19);
+            this.metroTabPage3.Controls.Add(this.metroLabel17);
+            this.metroTabPage3.Controls.Add(this.metroLabel16);
+            this.metroTabPage3.Controls.Add(this.tab3_Movement2);
+            this.metroTabPage3.Controls.Add(this.tab3_Movement1);
+            this.metroTabPage3.HorizontalScrollbarBarColor = true;
+            this.metroTabPage3.Location = new System.Drawing.Point(4, 35);
+            this.metroTabPage3.Name = "metroTabPage3";
+            this.metroTabPage3.Size = new System.Drawing.Size(936, 500);
+            this.metroTabPage3.TabIndex = 2;
+            this.metroTabPage3.Text = "Odległośći bezwzględne";
+            this.metroTabPage3.VerticalScrollbarBarColor = true;
+            // 
+            // tab3_pictureZ
+            // 
+            this.tab3_pictureZ.Location = new System.Drawing.Point(512, 314);
+            this.tab3_pictureZ.Name = "tab3_pictureZ";
+            this.tab3_pictureZ.Size = new System.Drawing.Size(236, 141);
+            this.tab3_pictureZ.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tab3_pictureZ.TabIndex = 26;
+            this.tab3_pictureZ.TabStop = false;
+            // 
+            // tab3_pictureX
+            // 
+            this.tab3_pictureX.Location = new System.Drawing.Point(512, 21);
+            this.tab3_pictureX.Name = "tab3_pictureX";
+            this.tab3_pictureX.Size = new System.Drawing.Size(236, 140);
+            this.tab3_pictureX.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tab3_pictureX.TabIndex = 25;
+            this.tab3_pictureX.TabStop = false;
+            // 
+            // tab3_coefAverage
+            // 
+            this.tab3_coefAverage.Location = new System.Drawing.Point(695, 471);
+            this.tab3_coefAverage.Name = "tab3_coefAverage";
+            this.tab3_coefAverage.ReadOnly = true;
+            this.tab3_coefAverage.Size = new System.Drawing.Size(89, 23);
+            this.tab3_coefAverage.TabIndex = 23;
+            // 
+            // tab3_cleanData
+            // 
+            this.tab3_cleanData.Location = new System.Drawing.Point(822, 470);
+            this.tab3_cleanData.Name = "tab3_cleanData";
+            this.tab3_cleanData.Size = new System.Drawing.Size(91, 23);
+            this.tab3_cleanData.TabIndex = 22;
+            this.tab3_cleanData.Text = "Wyczyść dane";
+            this.tab3_cleanData.Click += new System.EventHandler(this.tab3_cleanData_Click);
+            // 
+            // tab3_calculateCoef
+            // 
+            this.tab3_calculateCoef.Location = new System.Drawing.Point(509, 471);
+            this.tab3_calculateCoef.Name = "tab3_calculateCoef";
+            this.tab3_calculateCoef.Size = new System.Drawing.Size(103, 23);
+            this.tab3_calculateCoef.Style = MetroFramework.MetroColorStyle.Red;
+            this.tab3_calculateCoef.TabIndex = 21;
+            this.tab3_calculateCoef.Text = "Oblicz koeficjent";
+            this.tab3_calculateCoef.Click += new System.EventHandler(this.tab3_calculateCoef_Click);
+            // 
+            // tab3_coefZ
+            // 
+            this.tab3_coefZ.Location = new System.Drawing.Point(770, 336);
+            this.tab3_coefZ.Name = "tab3_coefZ";
+            this.tab3_coefZ.ReadOnly = true;
+            this.tab3_coefZ.Size = new System.Drawing.Size(143, 23);
+            this.tab3_coefZ.TabIndex = 20;
+            // 
+            // tab3_coefY
+            // 
+            this.tab3_coefY.Location = new System.Drawing.Point(770, 190);
+            this.tab3_coefY.Name = "tab3_coefY";
+            this.tab3_coefY.ReadOnly = true;
+            this.tab3_coefY.Size = new System.Drawing.Size(143, 23);
+            this.tab3_coefY.TabIndex = 19;
+            // 
+            // tab3_coefX
+            // 
+            this.tab3_coefX.Location = new System.Drawing.Point(770, 43);
+            this.tab3_coefX.Name = "tab3_coefX";
+            this.tab3_coefX.ReadOnly = true;
+            this.tab3_coefX.Size = new System.Drawing.Size(143, 23);
+            this.tab3_coefX.TabIndex = 18;
+            // 
+            // metroLabel25
+            // 
+            this.metroLabel25.AutoSize = true;
+            this.metroLabel25.Location = new System.Drawing.Point(618, 474);
+            this.metroLabel25.Name = "metroLabel25";
+            this.metroLabel25.Size = new System.Drawing.Size(82, 19);
+            this.metroLabel25.TabIndex = 17;
+            this.metroLabel25.Text = "Koeficjent = ";
+            // 
+            // metroLabel24
+            // 
+            this.metroLabel24.AutoSize = true;
+            this.metroLabel24.Location = new System.Drawing.Point(476, 20);
+            this.metroLabel24.Name = "metroLabel24";
+            this.metroLabel24.Size = new System.Drawing.Size(17, 19);
+            this.metroLabel24.TabIndex = 16;
+            this.metroLabel24.Text = "X";
+            // 
+            // metroLabel23
+            // 
+            this.metroLabel23.AutoSize = true;
+            this.metroLabel23.Location = new System.Drawing.Point(486, 314);
+            this.metroLabel23.Name = "metroLabel23";
+            this.metroLabel23.Size = new System.Drawing.Size(17, 19);
+            this.metroLabel23.TabIndex = 15;
+            this.metroLabel23.Text = "Z";
+            // 
+            // metroLabel22
+            // 
+            this.metroLabel22.AutoSize = true;
+            this.metroLabel22.Location = new System.Drawing.Point(486, 168);
+            this.metroLabel22.Name = "metroLabel22";
+            this.metroLabel22.Size = new System.Drawing.Size(17, 19);
+            this.metroLabel22.TabIndex = 14;
+            this.metroLabel22.Text = "Y";
+            // 
+            // metroLabel21
+            // 
+            this.metroLabel21.AutoSize = true;
+            this.metroLabel21.Location = new System.Drawing.Point(770, 314);
+            this.metroLabel21.Name = "metroLabel21";
+            this.metroLabel21.Size = new System.Drawing.Size(102, 19);
+            this.metroLabel21.TabIndex = 13;
+            this.metroLabel21.Text = "Koeficjent dla Z:";
+            // 
+            // metroLabel20
+            // 
+            this.metroLabel20.AutoSize = true;
+            this.metroLabel20.Location = new System.Drawing.Point(770, 168);
+            this.metroLabel20.Name = "metroLabel20";
+            this.metroLabel20.Size = new System.Drawing.Size(102, 19);
+            this.metroLabel20.TabIndex = 12;
+            this.metroLabel20.Text = "Koeficjent dla Y:";
+            // 
+            // metroLabel19
+            // 
+            this.metroLabel19.AutoSize = true;
+            this.metroLabel19.Location = new System.Drawing.Point(770, 21);
+            this.metroLabel19.Name = "metroLabel19";
+            this.metroLabel19.Size = new System.Drawing.Size(102, 19);
+            this.metroLabel19.TabIndex = 11;
+            this.metroLabel19.Text = "Koeficjent dla X:";
+            // 
+            // metroLabel17
+            // 
+            this.metroLabel17.AutoSize = true;
+            this.metroLabel17.Location = new System.Drawing.Point(3, 266);
+            this.metroLabel17.Name = "metroLabel17";
+            this.metroLabel17.Size = new System.Drawing.Size(89, 19);
+            this.metroLabel17.TabIndex = 6;
+            this.metroLabel17.Text = "Dane Ruchu 2";
+            // 
+            // metroLabel16
+            // 
+            this.metroLabel16.AutoSize = true;
+            this.metroLabel16.Location = new System.Drawing.Point(3, 21);
+            this.metroLabel16.Name = "metroLabel16";
+            this.metroLabel16.Size = new System.Drawing.Size(87, 19);
+            this.metroLabel16.TabIndex = 5;
+            this.metroLabel16.Text = "Dane Ruchu 1";
+            // 
+            // tab3_Movement2
+            // 
+            this.tab3_Movement2.Location = new System.Drawing.Point(130, 266);
+            this.tab3_Movement2.Multiline = true;
+            this.tab3_Movement2.Name = "tab3_Movement2";
+            this.tab3_Movement2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tab3_Movement2.Size = new System.Drawing.Size(329, 228);
+            this.tab3_Movement2.TabIndex = 3;
+            // 
+            // tab3_Movement1
+            // 
+            this.tab3_Movement1.Location = new System.Drawing.Point(130, 21);
+            this.tab3_Movement1.Multiline = true;
+            this.tab3_Movement1.Name = "tab3_Movement1";
+            this.tab3_Movement1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tab3_Movement1.Size = new System.Drawing.Size(329, 239);
+            this.tab3_Movement1.TabIndex = 2;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -728,70 +784,14 @@
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
-            // metroLabel18
+            // tab3_pictureY
             // 
-            this.metroLabel18.AutoSize = true;
-            this.metroLabel18.Location = new System.Drawing.Point(701, 481);
-            this.metroLabel18.Name = "metroLabel18";
-            this.metroLabel18.Size = new System.Drawing.Size(127, 19);
-            this.metroLabel18.TabIndex = 22;
-            this.metroLabel18.Text = "Koeficjent róźnicy = ";
-            // 
-            // metroTextBox1
-            // 
-            this.metroTextBox1.Location = new System.Drawing.Point(834, 477);
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.ReadOnly = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(97, 23);
-            this.metroTextBox1.TabIndex = 23;
-            // 
-            // metroLabel26
-            // 
-            this.metroLabel26.AutoSize = true;
-            this.metroLabel26.Location = new System.Drawing.Point(705, 80);
-            this.metroLabel26.Name = "metroLabel26";
-            this.metroLabel26.Size = new System.Drawing.Size(129, 19);
-            this.metroLabel26.TabIndex = 24;
-            this.metroLabel26.Text = "Koeficjent róźnicy X: ";
-            // 
-            // metroLabel27
-            // 
-            this.metroLabel27.AutoSize = true;
-            this.metroLabel27.Location = new System.Drawing.Point(703, 226);
-            this.metroLabel27.Name = "metroLabel27";
-            this.metroLabel27.Size = new System.Drawing.Size(129, 19);
-            this.metroLabel27.TabIndex = 25;
-            this.metroLabel27.Text = "Koeficjent róźnicy Y: ";
-            // 
-            // metroLabel28
-            // 
-            this.metroLabel28.AutoSize = true;
-            this.metroLabel28.Location = new System.Drawing.Point(705, 395);
-            this.metroLabel28.Name = "metroLabel28";
-            this.metroLabel28.Size = new System.Drawing.Size(129, 19);
-            this.metroLabel28.TabIndex = 26;
-            this.metroLabel28.Text = "Koeficjent róźnicy Z: ";
-            // 
-            // metroTextBox2
-            // 
-            this.metroTextBox2.Location = new System.Drawing.Point(705, 103);
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.Size = new System.Drawing.Size(125, 23);
-            this.metroTextBox2.TabIndex = 27;
-            // 
-            // metroTextBox3
-            // 
-            this.metroTextBox3.Location = new System.Drawing.Point(705, 249);
-            this.metroTextBox3.Name = "metroTextBox3";
-            this.metroTextBox3.Size = new System.Drawing.Size(125, 23);
-            this.metroTextBox3.TabIndex = 28;
-            // 
-            // metroTextBox4
-            // 
-            this.metroTextBox4.Location = new System.Drawing.Point(705, 418);
-            this.metroTextBox4.Name = "metroTextBox4";
-            this.metroTextBox4.Size = new System.Drawing.Size(125, 23);
-            this.metroTextBox4.TabIndex = 29;
+            this.tab3_pictureY.Location = new System.Drawing.Point(512, 168);
+            this.tab3_pictureY.Name = "tab3_pictureY";
+            this.tab3_pictureY.Size = new System.Drawing.Size(236, 140);
+            this.tab3_pictureY.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tab3_pictureY.TabIndex = 27;
+            this.tab3_pictureY.TabStop = false;
             // 
             // Form1
             // 
@@ -808,14 +808,14 @@
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
             this.metroTabPage1.PerformLayout();
+            this.metroTabPage2.ResumeLayout(false);
+            this.metroTabPage2.PerformLayout();
             this.metroTabPage3.ResumeLayout(false);
             this.metroTabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureZ)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureX)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureY)).EndInit();
-            this.metroTabPage2.ResumeLayout(false);
-            this.metroTabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureY)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -881,15 +881,15 @@
         private MetroFramework.Controls.MetroTextBox tab3_coefAverage;
         private System.Windows.Forms.PictureBox tab3_pictureZ;
         private System.Windows.Forms.PictureBox tab3_pictureX;
-        private System.Windows.Forms.PictureBox tab3_pictureY;
-        private MetroFramework.Controls.MetroTextBox metroTextBox4;
-        private MetroFramework.Controls.MetroTextBox metroTextBox3;
-        private MetroFramework.Controls.MetroTextBox metroTextBox2;
+        private MetroFramework.Controls.MetroTextBox tab2_EnergyCoefZ;
+        private MetroFramework.Controls.MetroTextBox tab2_EnergyCoefY;
+        private MetroFramework.Controls.MetroTextBox tab2_EnergyCoefX;
         private MetroFramework.Controls.MetroLabel metroLabel28;
         private MetroFramework.Controls.MetroLabel metroLabel27;
         private MetroFramework.Controls.MetroLabel metroLabel26;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
+        private MetroFramework.Controls.MetroTextBox tab2_EnergyCoefAverage;
         private MetroFramework.Controls.MetroLabel metroLabel18;
+        private System.Windows.Forms.PictureBox tab3_pictureY;
     }
 }
 

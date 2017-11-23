@@ -66,10 +66,11 @@ namespace MovementToImage
             for (int i = 0; i < visualization.Width; i++)
             {
                 List<Color> verticalImageLine = new List<Color>();
-                int differencePixels = (int)(Math.Abs(differences[i].Difference / differences[i].MaxValue) * visualization.Height);
+                double maxRange = Math.Abs(differences[i].MinValue) + Math.Abs(differences[i].MaxValue);
+                int differencePixels = (int)((differences[i].Difference / maxRange) * visualization.Height);
                 differencePixels = differencePixels == 0 ? 1 : differencePixels;
 
-                int startPixels = (int)(Math.Abs(differences[i].StartValue / differences[i].MaxValue) * visualization.Height);
+                int startPixels = (int)((Math.Abs(differences[i].StartValue) / maxRange) * visualization.Height);
                 verticalImageLine = Enumerable.Repeat(plotBackgroundColor, startPixels).ToList();
 
                 for (int j = 0; j < differencePixels; j++)
@@ -99,7 +100,7 @@ namespace MovementToImage
                 differencesSum += difference.Difference;
             }
 
-            double maxSum = differences.Count * Math.Abs(differences[0].MinValue - differences[0].MaxValue);
+            double maxSum = differences.Count * Math.Abs(differences[0].MinValue) + Math.Abs(differences[0].MaxValue);
 
             return 1 - (differencesSum / maxSum);
         }

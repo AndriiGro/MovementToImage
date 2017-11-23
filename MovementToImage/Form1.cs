@@ -294,7 +294,7 @@ namespace MovementToImage
             }
         }
 
-        //Tab Correlation calculation
+        //Tab Correlation and Energy calculation
         public void SetPlotCorrX(PlotModel model) { plotCorrX.Model = model; }
         public void SetPlotCorrY(PlotModel model) { plotCorrY.Model = model; }
         public void SetPlotCorrZ(PlotModel model) { plotCorrZ.Model = model; }
@@ -302,6 +302,10 @@ namespace MovementToImage
         public void SetCorrelationResultY(string result) { txt_corrResultY.Text = result; }
         public void SetCorrelationResultZ(string result) { txt_corrResultZ.Text = result; }
         public void SetCorrelationResultAverage(string result) { txt_CorrResult.Text = result; }
+        public void SetEnergyCoefficientX(string result) { tab2_EnergyCoefX.Text = result; }
+        public void SetEnergyCoefficientY(string result) { tab2_EnergyCoefY.Text = result; }
+        public void SetEnergyCoefficientZ(string result) { tab2_EnergyCoefZ.Text = result; }
+        public void SetEnergyCoefficientAverage(string result) { tab2_EnergyCoefAverage.Text = result; }
 
         //Tab Distance coefficient
         public void SetTab3PictureX(Image image) { tab3_pictureX.Image = image; }
