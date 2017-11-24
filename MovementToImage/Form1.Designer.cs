@@ -102,6 +102,7 @@
             this.tab4_labelFilePath = new MetroFramework.Controls.MetroLabel();
             this.tab4_txtMovesRanges = new MetroFramework.Controls.MetroTextBox();
             this.tab4_btnParseData = new MetroFramework.Controls.MetroButton();
+            this.metroLabel29 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.resultPictureBox)).BeginInit();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -802,6 +803,7 @@
             // 
             // metroTabPage4
             // 
+            this.metroTabPage4.Controls.Add(this.metroLabel29);
             this.metroTabPage4.Controls.Add(this.tab4_btnParseData);
             this.metroTabPage4.Controls.Add(this.tab4_txtMovesRanges);
             this.metroTabPage4.Controls.Add(this.tab4_labelFilePath);
@@ -834,11 +836,11 @@
             // 
             // tab4_txtMovesRanges
             // 
-            this.tab4_txtMovesRanges.Location = new System.Drawing.Point(15, 77);
+            this.tab4_txtMovesRanges.Location = new System.Drawing.Point(15, 94);
             this.tab4_txtMovesRanges.Multiline = true;
             this.tab4_txtMovesRanges.Name = "tab4_txtMovesRanges";
             this.tab4_txtMovesRanges.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tab4_txtMovesRanges.Size = new System.Drawing.Size(256, 387);
+            this.tab4_txtMovesRanges.Size = new System.Drawing.Size(256, 370);
             this.tab4_txtMovesRanges.TabIndex = 4;
             // 
             // tab4_btnParseData
@@ -849,6 +851,15 @@
             this.tab4_btnParseData.TabIndex = 5;
             this.tab4_btnParseData.Text = "Parsuj";
             this.tab4_btnParseData.Click += new System.EventHandler(this.tab4_btnParseData_Click);
+            // 
+            // metroLabel29
+            // 
+            this.metroLabel29.AutoSize = true;
+            this.metroLabel29.Location = new System.Drawing.Point(16, 69);
+            this.metroLabel29.Name = "metroLabel29";
+            this.metroLabel29.Size = new System.Drawing.Size(102, 19);
+            this.metroLabel29.TabIndex = 6;
+            this.metroLabel29.Text = "Zakresy ruchów:";
             // 
             // Form1
             // 
@@ -954,6 +965,7 @@
         private MetroFramework.Controls.MetroTextBox tab4_txtMovesRanges;
         private MetroFramework.Controls.MetroLabel tab4_labelFilePath;
         private MetroFramework.Controls.MetroButton tab4_btnOpenFile;
+        private MetroFramework.Controls.MetroLabel metroLabel29;
     }
 }
 

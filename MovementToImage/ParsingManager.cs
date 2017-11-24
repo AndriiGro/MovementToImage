@@ -15,6 +15,7 @@ namespace MovementToImage
         Form1 mainForm;
         string filePath;
         List<string> fileData;
+        List<string> stringRanges;
         List<Point> ranges;
 
         List<string> columnsToParse = new List<string> {
@@ -30,7 +31,8 @@ namespace MovementToImage
         };
         string counterColumn = "PacketCounter";
         List<string> dataColumns;
-        string[][] parsedData;
+        string[,] parsedData;
+        string[][] parsedCSV;
 
         public ParsingManager(Form1 form)
         {
@@ -85,9 +87,48 @@ namespace MovementToImage
 
         private void Parse()
         {
+            parsedCSV = new string[fileData.Count][];
+            for (int i = 0; i < fileData.Count; i++)
+            {
+                parsedCSV[i] = fileData[i].Split('\t');
+            }
+
+            int counterColumnNumber = GetColumnPosition(counterColumn);
+            int maxRange = ranges.Max(r => r.Y);
+            parsedData = new string[columnsToParse.Count, (maxRange + ranges.Count * 5)];
+            int currentRow = 0;
             for (int i = 0; i < ranges.Count; i++)
             {
+                parsedData[0, currentRow] = $"Zakres ruchu N{i + 1}: {stringRanges[0]}";
+                currentRow++;
 
+                for (int j = 0; j < columnsToParse.Count; j++)
+                {
+                    parsedData[j, currentRow] = columnsToParse[j];
+                }
+                currentRow++;
+
+                Point currentRange = ranges[i];
+                int rangeStartRowInData = -1;
+                for (int y = 0; y < parsedCSV.GetLength(0); y++)
+                {
+                    if (parsedCSV[counterColumnNumber][y] != currentRange.X.ToString())
+                        continue;
+
+                    rangeStartRowInData = y;
+                    break;
+                }
+
+                for (int t = 0; t < currentRange.Y - currentRange.X; t++)
+                {
+                    for (int p = 0; p < columnsToParse.Count; p++)
+                    {
+                        parsedData[p, currentRow] =
+                            parsedCSV[GetColumnPosition(columnsToParse[p])][rangeStartRowInData + t];
+                    }
+
+                    currentRow++;
+                }
 
             }
         }
@@ -105,7 +146,7 @@ namespace MovementToImage
         private void ParseRanges()
         {
             ranges = new List<Point>();
-            List<string> stringRanges = mainForm.GetTab4Ranges().Split(Environment.NewLine.ToCharArray()).ToList();
+            stringRanges = mainForm.GetTab4Ranges().Split(Environment.NewLine.ToCharArray()).ToList();
             stringRanges = stringRanges.Where(s => !string.IsNullOrWhiteSpace(s)).ToList();
 
             foreach (string stringRange in stringRanges)
