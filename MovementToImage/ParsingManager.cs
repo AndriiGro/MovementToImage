@@ -33,6 +33,7 @@ namespace MovementToImage
         List<string> dataColumns;
         string[,] parsedData;
         string[][] parsedCSV;
+        string timeLabel;
 
         public ParsingManager(Form1 form)
         {
@@ -80,9 +81,32 @@ namespace MovementToImage
 
         internal void ParseData()
         {
+            timeLabel = DateTime.Now.ToString("yyyy-dd-M--HH-mm-ss");
             ParseRanges();
             ParseColumns();
             Parse();
+            SaveParsedFiles();
+        }
+
+        private void SaveParsedFiles()
+        {
+            string filePathWithoutTxtType = filePath.Substring(0, filePath.Length - 4);
+            string fileName = filePathWithoutTxtType + "_Parsed_at_" + timeLabel + ".csv";
+            using (StreamWriter outfile = new StreamWriter(fileName))
+            {
+                for (int x = 0; x < parsedData.GetLength(1); x++)
+                {
+                    string content = "";
+                    for (int y = 0; y < parsedData.GetLength(0); y++)
+                    {
+                        content += (parsedData[y, x]?.ToString() ?? "") + "\t";
+                    }
+
+                    outfile.WriteLine(content);
+                }
+            }
+
+            MessageBox.Show($"Dane zastały sparsowane do:{Environment.NewLine} {filePath}", "Udało się!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void Parse()
@@ -106,13 +130,14 @@ namespace MovementToImage
                 {
                     parsedData[j, currentRow] = columnsToParse[j];
                 }
+
                 currentRow++;
 
                 Point currentRange = ranges[i];
                 int rangeStartRowInData = -1;
                 for (int y = 0; y < parsedCSV.GetLength(0); y++)
                 {
-                    if (parsedCSV[counterColumnNumber][y] != currentRange.X.ToString())
+                    if (parsedCSV[y][counterColumnNumber] != currentRange.X.ToString("00000"))
                         continue;
 
                     rangeStartRowInData = y;
@@ -124,7 +149,7 @@ namespace MovementToImage
                     for (int p = 0; p < columnsToParse.Count; p++)
                     {
                         parsedData[p, currentRow] =
-                            parsedCSV[GetColumnPosition(columnsToParse[p])][rangeStartRowInData + t];
+                            parsedCSV[rangeStartRowInData + t][GetColumnPosition(columnsToParse[p])];
                     }
 
                     currentRow++;
@@ -152,8 +177,8 @@ namespace MovementToImage
             foreach (string stringRange in stringRanges)
             {
                 string[] range = stringRange.Split('-');
-                int start = int.Parse(range[0]) - 1;
-                int end = int.Parse(range[1]) - 1;
+                int start = int.Parse(range[0]);
+                int end = int.Parse(range[1]);
 
                 ranges.Add(new Point(start, end));
             }

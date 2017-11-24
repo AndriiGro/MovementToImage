@@ -292,7 +292,7 @@ namespace MovementToImage
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Exception happens ;)", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Błędy się zdarzają ;)", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
