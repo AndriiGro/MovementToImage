@@ -29,6 +29,8 @@ namespace MovementToImage
         public int xSize = 150;
         public int ySize = 60;
 
+        private static ParsingManager parser;
+
         public Form1()
         {
             InitializeComponent();
@@ -251,7 +253,7 @@ namespace MovementToImage
             stringInputDataZ = new List<string>();
             doubleInputDataZ = new List<double>();
             List<string> stringInputDataXYZ = dataTextBox.Text.Split(Environment.NewLine.ToCharArray()).ToList();
-            stringInputDataXYZ = stringInputDataXYZ.Where(s => !string.IsNullOrWhiteSpace(s)).Distinct().ToList();
+            stringInputDataXYZ = stringInputDataXYZ.Where(s => !string.IsNullOrWhiteSpace(s)).ToList();
 
             foreach (var dataXYZ in stringInputDataXYZ)
             {
@@ -316,6 +318,10 @@ namespace MovementToImage
         public void SetTab3DistanceCoefficientZ(string result) { tab3_coefZ.Text = result; }
         public void SetTab3DistanceCoefficientAverage(string result) { tab3_coefAverage.Text = result; }
 
+        //Tab Parsing
+        public void SetTab4LabelFilePath(string path) { tab4_labelFilePath.Text = path; }
+        public string GetTab4Ranges() { return tab4_txtMovesRanges.Text; }
+
         private void btn_clearCorrelationData_Click(object sender, EventArgs e)
         {
             txt_Movement1.Text = string.Empty;
@@ -345,8 +351,20 @@ namespace MovementToImage
         {
             try
             {
-                var parser = new ParsingManager(this);
-                parser.StartProcess();
+                parser = new ParsingManager(this);
+                parser.OpenFileAndGetDataFromIt();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Exception happens ;)", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void tab4_btnParseData_Click(object sender, EventArgs e)
+        {
+            try
+            {                
+                parser.ParseData();
             }
             catch (Exception ex)
             {

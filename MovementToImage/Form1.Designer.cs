@@ -848,6 +848,7 @@
             this.tab4_btnParseData.Size = new System.Drawing.Size(129, 23);
             this.tab4_btnParseData.TabIndex = 5;
             this.tab4_btnParseData.Text = "Parsuj";
+            this.tab4_btnParseData.Click += new System.EventHandler(this.tab4_btnParseData_Click);
             // 
             // Form1
             // 

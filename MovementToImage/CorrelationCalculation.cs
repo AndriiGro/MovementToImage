@@ -173,7 +173,7 @@ namespace MovementToImage
             MovementData movement = new MovementData();
 
             List<string> stringInputDataXYZ = movementData.Split(Environment.NewLine.ToCharArray()).ToList();
-            stringInputDataXYZ = stringInputDataXYZ.Where(s => !string.IsNullOrWhiteSpace(s)).Distinct().ToList();
+            stringInputDataXYZ = stringInputDataXYZ.Where(s => !string.IsNullOrWhiteSpace(s)).ToList();
 
             foreach (var dataXYZ in stringInputDataXYZ)
             {
