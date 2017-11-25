@@ -1,15 +1,8 @@
-﻿using AForge.Imaging.Filters;
-using MetroFramework.Forms;
-using OxyPlot;
-using OxyPlot.Axes;
-using OxyPlot.Series;
-using OxyPlot.WindowsForms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Windows.Forms;
 
 namespace MovementToImage
 {
@@ -29,8 +22,11 @@ namespace MovementToImage
 
         internal void ProcessData(string movementData1, string movementData2)
         {
-            MovementData movement1 = helper.ConvertInputDataToMovementData(movementData1);
-            MovementData movement2 = helper.ConvertInputDataToMovementData(movementData2);
+            MovementData movement1Pre = helper.ConvertInputDataToMovementData(movementData1);
+            MovementData movement2Pre = helper.ConvertInputDataToMovementData(movementData2);
+
+            MovementData movement1 = Helper.GetShorterMovement(movement1Pre, movement2Pre);
+            MovementData movement2 = Helper.GetLongerMovement(movement1Pre, movement2Pre);
 
             MovementForDistanceCoeffitient movementX = new MovementForDistanceCoeffitient(movement1.doubleDataX, movement2.doubleDataX);
             MovementForDistanceCoeffitient movementY = new MovementForDistanceCoeffitient(movement1.doubleDataY, movement2.doubleDataY);

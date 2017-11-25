@@ -96,13 +96,13 @@
             this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
             this.tab3_Movement2 = new MetroFramework.Controls.MetroTextBox();
             this.tab3_Movement1 = new MetroFramework.Controls.MetroTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
-            this.tab4_btnOpenFile = new MetroFramework.Controls.MetroButton();
-            this.tab4_labelFilePath = new MetroFramework.Controls.MetroLabel();
-            this.tab4_txtMovesRanges = new MetroFramework.Controls.MetroTextBox();
-            this.tab4_btnParseData = new MetroFramework.Controls.MetroButton();
             this.metroLabel29 = new MetroFramework.Controls.MetroLabel();
+            this.tab4_btnParseData = new MetroFramework.Controls.MetroButton();
+            this.tab4_txtMovesRanges = new MetroFramework.Controls.MetroTextBox();
+            this.tab4_labelFilePath = new MetroFramework.Controls.MetroLabel();
+            this.tab4_btnOpenFile = new MetroFramework.Controls.MetroButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.resultPictureBox)).BeginInit();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -111,8 +111,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureZ)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureX)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroTabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // plotView
@@ -249,9 +249,9 @@
             // metroTabControl1
             // 
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
+            this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Controls.Add(this.metroTabPage3);
-            this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Location = new System.Drawing.Point(4, 113);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 3;
@@ -573,6 +573,7 @@
             this.txt_Movement2.Location = new System.Drawing.Point(96, 265);
             this.txt_Movement2.Multiline = true;
             this.txt_Movement2.Name = "txt_Movement2";
+            this.txt_Movement2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txt_Movement2.Size = new System.Drawing.Size(329, 235);
             this.txt_Movement2.TabIndex = 3;
             // 
@@ -581,6 +582,7 @@
             this.txt_Movement1.Location = new System.Drawing.Point(96, 21);
             this.txt_Movement1.Multiline = true;
             this.txt_Movement1.Name = "txt_Movement1";
+            this.txt_Movement1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txt_Movement1.Size = new System.Drawing.Size(329, 239);
             this.txt_Movement1.TabIndex = 2;
             // 
@@ -791,16 +793,6 @@
             this.tab3_Movement1.Size = new System.Drawing.Size(329, 239);
             this.tab3_Movement1.TabIndex = 2;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(444, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(138, 98);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            // 
             // metroTabPage4
             // 
             this.metroTabPage4.Controls.Add(this.metroLabel29);
@@ -816,32 +808,14 @@
             this.metroTabPage4.Text = "Parsowanie danych";
             this.metroTabPage4.VerticalScrollbarBarColor = true;
             // 
-            // tab4_btnOpenFile
+            // metroLabel29
             // 
-            this.tab4_btnOpenFile.Location = new System.Drawing.Point(15, 16);
-            this.tab4_btnOpenFile.Name = "tab4_btnOpenFile";
-            this.tab4_btnOpenFile.Size = new System.Drawing.Size(121, 23);
-            this.tab4_btnOpenFile.TabIndex = 2;
-            this.tab4_btnOpenFile.Text = "Otwórz plik";
-            this.tab4_btnOpenFile.Click += new System.EventHandler(this.tab4_btnOpenFile_Click);
-            // 
-            // tab4_labelFilePath
-            // 
-            this.tab4_labelFilePath.AutoSize = true;
-            this.tab4_labelFilePath.Location = new System.Drawing.Point(15, 46);
-            this.tab4_labelFilePath.Name = "tab4_labelFilePath";
-            this.tab4_labelFilePath.Size = new System.Drawing.Size(168, 19);
-            this.tab4_labelFilePath.TabIndex = 3;
-            this.tab4_labelFilePath.Text = "Otwórz plik dla parsowania";
-            // 
-            // tab4_txtMovesRanges
-            // 
-            this.tab4_txtMovesRanges.Location = new System.Drawing.Point(15, 94);
-            this.tab4_txtMovesRanges.Multiline = true;
-            this.tab4_txtMovesRanges.Name = "tab4_txtMovesRanges";
-            this.tab4_txtMovesRanges.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tab4_txtMovesRanges.Size = new System.Drawing.Size(256, 370);
-            this.tab4_txtMovesRanges.TabIndex = 4;
+            this.metroLabel29.AutoSize = true;
+            this.metroLabel29.Location = new System.Drawing.Point(16, 69);
+            this.metroLabel29.Name = "metroLabel29";
+            this.metroLabel29.Size = new System.Drawing.Size(102, 19);
+            this.metroLabel29.TabIndex = 6;
+            this.metroLabel29.Text = "Zakresy ruchów:";
             // 
             // tab4_btnParseData
             // 
@@ -852,14 +826,42 @@
             this.tab4_btnParseData.Text = "Parsuj";
             this.tab4_btnParseData.Click += new System.EventHandler(this.tab4_btnParseData_Click);
             // 
-            // metroLabel29
+            // tab4_txtMovesRanges
             // 
-            this.metroLabel29.AutoSize = true;
-            this.metroLabel29.Location = new System.Drawing.Point(16, 69);
-            this.metroLabel29.Name = "metroLabel29";
-            this.metroLabel29.Size = new System.Drawing.Size(102, 19);
-            this.metroLabel29.TabIndex = 6;
-            this.metroLabel29.Text = "Zakresy ruchów:";
+            this.tab4_txtMovesRanges.Location = new System.Drawing.Point(15, 94);
+            this.tab4_txtMovesRanges.Multiline = true;
+            this.tab4_txtMovesRanges.Name = "tab4_txtMovesRanges";
+            this.tab4_txtMovesRanges.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tab4_txtMovesRanges.Size = new System.Drawing.Size(256, 370);
+            this.tab4_txtMovesRanges.TabIndex = 4;
+            // 
+            // tab4_labelFilePath
+            // 
+            this.tab4_labelFilePath.AutoSize = true;
+            this.tab4_labelFilePath.Location = new System.Drawing.Point(15, 46);
+            this.tab4_labelFilePath.Name = "tab4_labelFilePath";
+            this.tab4_labelFilePath.Size = new System.Drawing.Size(168, 19);
+            this.tab4_labelFilePath.TabIndex = 3;
+            this.tab4_labelFilePath.Text = "Otwórz plik dla parsowania";
+            // 
+            // tab4_btnOpenFile
+            // 
+            this.tab4_btnOpenFile.Location = new System.Drawing.Point(15, 16);
+            this.tab4_btnOpenFile.Name = "tab4_btnOpenFile";
+            this.tab4_btnOpenFile.Size = new System.Drawing.Size(121, 23);
+            this.tab4_btnOpenFile.TabIndex = 2;
+            this.tab4_btnOpenFile.Text = "Otwórz plik";
+            this.tab4_btnOpenFile.Click += new System.EventHandler(this.tab4_btnOpenFile_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(444, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(138, 98);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -883,9 +885,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureZ)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pictureX)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.metroTabPage4.ResumeLayout(false);
             this.metroTabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

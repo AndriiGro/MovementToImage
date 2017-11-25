@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MovementToImage
@@ -29,7 +27,7 @@ namespace MovementToImage
             "OriInc_q2",
             "OriInc_q3"
         };
-        string counterColumn = "PacketCounter";
+        string counterColumn = "Frame";
         List<string> dataColumns;
         string[,] parsedData;
         string[][] parsedCSV;
@@ -99,7 +97,8 @@ namespace MovementToImage
                     string content = "";
                     for (int y = 0; y < parsedData.GetLength(0); y++)
                     {
-                        content += (parsedData[y, x]?.ToString() ?? "") + "\t";
+                        content += (parsedData[y, x]?.ToString() ?? "") 
+                            + (y == (parsedData.GetLength(0) - 1) ? string.Empty : ",");
                     }
 
                     outfile.WriteLine(content);
@@ -123,7 +122,7 @@ namespace MovementToImage
             int currentRow = 0;
             for (int i = 0; i < ranges.Count; i++)
             {
-                parsedData[0, currentRow] = $"Zakres ruchu N{i + 1}: {stringRanges[0]}";
+                parsedData[0, currentRow] = $"Zakres ruchu N{i + 1}: {stringRanges[i]}";
                 currentRow++;
 
                 for (int j = 0; j < columnsToParse.Count; j++)
@@ -137,7 +136,7 @@ namespace MovementToImage
                 int rangeStartRowInData = -1;
                 for (int y = 0; y < parsedCSV.GetLength(0); y++)
                 {
-                    if (parsedCSV[y][counterColumnNumber] != currentRange.X.ToString("00000"))
+                    if (parsedCSV[y][counterColumnNumber] != currentRange.X.ToString())
                         continue;
 
                     rangeStartRowInData = y;

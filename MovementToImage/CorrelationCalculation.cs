@@ -1,15 +1,10 @@
-﻿using AForge.Imaging.Filters;
-using MetroFramework.Forms;
-using OxyPlot;
+﻿using OxyPlot;
 using OxyPlot.Axes;
 using OxyPlot.Series;
-using OxyPlot.WindowsForms;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Windows.Forms;
 
 namespace MovementToImage
 {
@@ -25,8 +20,11 @@ namespace MovementToImage
 
         internal void ProcessData(string movementData1, string movementData2)
         {
-            MovementData movement1 = ConvertInputDataToMovementData(movementData1);
-            MovementData movement2 = ConvertInputDataToMovementData(movementData2);
+            MovementData movement1Pre = ConvertInputDataToMovementData(movementData1);
+            MovementData movement2Pre = ConvertInputDataToMovementData(movementData2);
+
+            MovementData movement1 = Helper.GetShorterMovement(movement1Pre, movement2Pre);
+            MovementData movement2 = Helper.GetLongerMovement(movement1Pre, movement2Pre);
 
             PlotModel plotModelX = GeneratePlotModelForTwoArrays(movement1.doubleDataX, movement2.doubleDataX);
             PlotModel plotModelY = GeneratePlotModelForTwoArrays(movement1.doubleDataY, movement2.doubleDataY);
@@ -78,18 +76,21 @@ namespace MovementToImage
             return energy;
         }
 
-        private double GetCorrelationForTwoArrays(List<double> array1, List<double> array2)
+        private double GetCorrelationForTwoArrays(List<double> list1, List<double> list2)
         {
-            double[] array_xy = new double[array1.Count];
-            double[] array_xp2 = new double[array1.Count];
-            double[] array_yp2 = new double[array1.Count];
-            for (int i = 0; i < array1.Count; i++)
+            double[] array1 = list1.ToArray();
+            List<double> part = list2.GetRange(0, array1.Length);
+            double[] array2 = part.ToArray();
+            double[] array_xy = new double[array1.Length];
+            double[] array_xp2 = new double[array1.Length];
+            double[] array_yp2 = new double[array1.Length];
+            for (int i = 0; i < array1.Length; i++)
                 array_xy[i] = array1[i] * array2[i];
 
-            for (int i = 0; i < array1.Count; i++)
+            for (int i = 0; i < array1.Length; i++)
                 array_xp2[i] = Math.Pow(array1[i], 2.0);
 
-            for (int i = 0; i < array1.Count; i++)
+            for (int i = 0; i < array1.Length; i++)
                 array_yp2[i] = Math.Pow(array2[i], 2.0);
 
             double sum_x = 0;
@@ -120,8 +121,8 @@ namespace MovementToImage
             double Ey2 = Math.Pow(sum_y, 2.00);
 
             double correl =
-            (array1.Count * sum_xy - sum_x * sum_y) /
-            Math.Sqrt((array1.Count * sum_xpow2 - Ex2) * (array1.Count * sum_ypow2 - Ey2));
+            (array1.Length * sum_xy - sum_x * sum_y) /
+            Math.Sqrt((array1.Length * sum_xpow2 - Ex2) * (array1.Length * sum_ypow2 - Ey2));
 
             return correl;
         }
