@@ -64,7 +64,7 @@ namespace MovementToImage
             merge.AddRange(doubleData1);
             merge.AddRange(doubleData2);
 
-            double maxEnergyDifference = Math.Abs(merge.Min()) * Math.Abs(merge.Max()) * doubleData1.Count;
+            double maxEnergyDifference = Math.Pow((merge.Max() - merge.Min()), 2) * doubleData2.Count;
 
             return 1 - (Math.Abs(energy1 - energy2) / maxEnergyDifference);
         }
@@ -75,6 +75,17 @@ namespace MovementToImage
             doubleData.ForEach(value => energy += Math.Abs(value) * Math.Abs(value));
             return energy;
         }
+
+        //private double CalculateEnergyOfArray(List<double> doubleData, int howManyToUse)
+        //{
+        //    double energy = 0;
+        //    for (int i = 0; i < howManyToUse; i++)
+        //    {
+        //        energy += Math.Abs(doubleData[i]) * Math.Abs(doubleData[i]);
+        //    }
+
+        //    return energy;
+        //}
 
         private double GetCorrelationForTwoArrays(List<double> list1, List<double> list2)
         {

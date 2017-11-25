@@ -96,7 +96,7 @@ namespace MovementToImage
                 differencesSum += difference.Difference;
             }
 
-            double maxSum = differences.Count * Math.Abs(differences[0].MinValue) + Math.Abs(differences[0].MaxValue);
+            double maxSum = differences.Count * Math.Abs(differences[0].MaxValue - differences[0].MinValue);
 
             return 1 - (differencesSum / maxSum);
         }
