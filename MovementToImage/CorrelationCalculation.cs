@@ -76,36 +76,28 @@ namespace MovementToImage
             return energy;
         }
 
-        //private double CalculateEnergyOfArray(List<double> doubleData, int howManyToUse)
-        //{
-        //    double energy = 0;
-        //    for (int i = 0; i < howManyToUse; i++)
-        //    {
-        //        energy += Math.Abs(doubleData[i]) * Math.Abs(doubleData[i]);
-        //    }
-
-        //    return energy;
-        //}
-
         private double GetCorrelationForTwoArrays(List<double> list1, List<double> list2)
         {
             double[] array1 = list1.ToArray();
             List<double> part = list2.GetRange(0, array1.Length);
             double[] array2 = part.ToArray();
             double[] array_xy = new double[array1.Length];
-            double[] array_xp2 = new double[array1.Length];
-            double[] array_yp2 = new double[array1.Length];
+            double[] array_xPower2 = new double[array1.Length];
+            double[] array_yPower2 = new double[array1.Length];
+            double sum_x = 0;
+            double sum_y = 0;
+            double sum_xy = 0;
+            double sum_xpow2 = 0;
+            double sum_ypow2 = 0;
+
             for (int i = 0; i < array1.Length; i++)
                 array_xy[i] = array1[i] * array2[i];
 
             for (int i = 0; i < array1.Length; i++)
-                array_xp2[i] = Math.Pow(array1[i], 2.0);
+                array_xPower2[i] = Math.Pow(array1[i], 2.0);
 
             for (int i = 0; i < array1.Length; i++)
-                array_yp2[i] = Math.Pow(array2[i], 2.0);
-
-            double sum_x = 0;
-            double sum_y = 0;
+                array_yPower2[i] = Math.Pow(array2[i], 2.0);
 
             foreach (double n in array1)
                 sum_x += n;
@@ -113,29 +105,23 @@ namespace MovementToImage
             foreach (double n in array2)
                 sum_y += n;
 
-            double sum_xy = 0;
-
             foreach (double n in array_xy)
                 sum_xy += n;
 
-            double sum_xpow2 = 0;
-
-            foreach (double n in array_xp2)
+            foreach (double n in array_xPower2)
                 sum_xpow2 += n;
 
-            double sum_ypow2 = 0;
-
-            foreach (double n in array_yp2)
+            foreach (double n in array_yPower2)
                 sum_ypow2 += n;
 
-            double Ex2 = Math.Pow(sum_x, 2.00);
-            double Ey2 = Math.Pow(sum_y, 2.00);
+            double xSumPower2 = Math.Pow(sum_x, 2.00);
+            double ySumPower2 = Math.Pow(sum_y, 2.00);
 
-            double correl =
+            double correlation =
             (array1.Length * sum_xy - sum_x * sum_y) /
-            Math.Sqrt((array1.Length * sum_xpow2 - Ex2) * (array1.Length * sum_ypow2 - Ey2));
+            Math.Sqrt((array1.Length * sum_xpow2 - xSumPower2) * (array1.Length * sum_ypow2 - ySumPower2));
 
-            return correl;
+            return correlation;
         }
 
         private PlotModel GeneratePlotModelForTwoArrays(PlotModel plotModel, List<double> doubleData1, List<double> doubleData2)

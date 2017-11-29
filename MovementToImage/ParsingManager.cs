@@ -105,7 +105,7 @@ namespace MovementToImage
                 }
             }
 
-            MessageBox.Show($"Dane zastały sparsowane do:{Environment.NewLine} {filePath}", "Udało się!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Dane zostały sparsowane do:{Environment.NewLine} {filePath}", "Udało się!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void Parse()

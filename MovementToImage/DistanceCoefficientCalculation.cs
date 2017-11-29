@@ -49,10 +49,10 @@ namespace MovementToImage
             Bitmap visualizationX = GenerateDifferencesVisualizationImage(differencesX);
             Bitmap visualizationY = GenerateDifferencesVisualizationImage(differencesY);
             Bitmap visualizationZ = GenerateDifferencesVisualizationImage(differencesZ);
-            
+
             mainForm.SetTab3PictureX(visualizationX);
             mainForm.SetTab3PictureY(visualizationY);
-            mainForm.SetTab3PictureZ(visualizationZ);            
+            mainForm.SetTab3PictureZ(visualizationZ);
         }
 
         private Bitmap GenerateDifferencesVisualizationImage(List<DataForCountingDifference> differences)
