@@ -81,7 +81,7 @@ namespace MovementToImage
 
                 for (int z = 0; z < visualization.Height; z++)
                 {
-                    visualization.SetPixel(i, z, verticalImageLine[z]);
+                    visualization.SetPixel(i, z, verticalImageLine[visualization.Height - z - 1]);
                 }
             }
 
